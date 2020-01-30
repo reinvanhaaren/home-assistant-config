@@ -1,0 +1,24 @@
+---
+- host: !secret lg_tv_ip_address
+  name: TV
+  turn_on_action:
+    service: media_player.turn_on
+    data:
+      entity_id: media_player.chromecast
+  customize:
+    sources:
+      - HDMI1
+      - HDMI2
+      - HDMI3
+      - HDMI4
+      - Spotify Music - Luister gratis op LG TV
+      - YouTube
+      - Netflix
+      - Videoland
+      - Disney+
+      - NPO
+      - Kijk
+      - RTL XL
+      - Radio [Dutch]
+      - Pathé Thuis
+      - Webbrowser

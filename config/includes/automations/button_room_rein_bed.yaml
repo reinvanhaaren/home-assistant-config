@@ -1,0 +1,21 @@
+---
+- alias: 'Button: Room Rein bed: on'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: sensor.button_room_rein_bed
+      to: 'on'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.room_rein
+- alias: 'Button: Room Rein bed: off'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: sensor.button_room_rein_bed
+      to: 'off'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.room_rein

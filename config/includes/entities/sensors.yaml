@@ -1,0 +1,36 @@
+---
+- platform: template
+  sensors:
+    washing_machine_watts:
+      value_template: >
+        {{ state_attr('switch.washing_machine', 'current_power_w') | replace(' W', '') | float('Unavailable') }}
+      unit_of_measurement: Watt
+      friendly_name: Washing machine usage
+
+- platform: mqtt
+  name: Temperature
+  unit_of_measurement: '°C'
+  state_topic: 'home/temperature'
+
+- platform: mqtt
+  name: Ventilation usage
+  unit_of_measurement: Watt
+  state_topic: 'home/ventilation'
+
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: '/'
+    - type: memory_use_percent
+    - type: network_in
+      arg: eno1
+    - type: network_out
+      arg: eno1
+    - type: processor_use
+    - type: last_boot
+
+# - platform: trakt
+#   id: 'sakdfjawioehrw3985728935uksdf'
+#   secret: 'sdfoiwahjeflkaswjefi83q7829045uoijksldf'
+#   username: iantrich
+#   days: 10

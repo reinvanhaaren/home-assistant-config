@@ -1,0 +1,53 @@
+play_sound:
+  alias: Play a sound effect
+  sequence:
+  - service: media_player.volume_set
+    data_template:
+      entity_id: '{{ media_id }}'
+    data:
+      volume_level: 0.4
+  - service: media_player.play_media
+    data_template:
+      entity_id: '{{ media_id }}'
+      media_content_id: '{{ sound_file }}'
+      media_content_type: music
+brightness_up:
+  alias: Brightness up
+  sequence:
+  - condition: state
+    entity_id: light.living_room
+    state: 'on'
+  - service: light.turn_on
+    data_template:
+      entity_id: light.living_room
+      transition: 1
+      brightness: >
+        {% set n = state_attr('light.living_room_ridge', 'brightness') | int + 100 %}
+        {% if n > 255 %}
+        255
+        {% else %}
+        {{ n }}
+        {% endif %}
+brightness_down:
+  alias: Brightness down
+  sequence:
+  - condition: state
+    entity_id: light.living_room
+    state: 'on'
+  - service: light.turn_on
+    data_template:
+      entity_id: light.living_room
+      transition: 1
+      brightness: >
+        {% set n = state_attr('light.living_room_ridge', 'brightness') | int - 100 %}
+        {% if n <= 1 %}
+        1
+        {% else %}
+        {{ n }}
+        {% endif %}
+
+# {% if states.input_number.brightness | int <= 230 %}
+# {{ states.input_number.brightness | int + 25 }}
+# {% else %}
+# 255
+# {% endif %}

@@ -1,0 +1,33 @@
+---
+- alias: 'Button: Living room wall: toggle'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: sensor.button_living_room_wall
+      to: 'toggle'
+  action:
+    - service: light.toggle
+      data:
+        entity_id: light.living_room
+    - service: light.toggle
+      data:
+        entity_id: light.kitchen_cabinets
+    - service: switch.toggle
+      data:
+        entity_id: switch.living_room_corner
+- alias: 'Button: Living room wall: toggle_hold'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: sensor.button_living_room_wall
+      to: 'toggle_hold'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.living_room
+    - service: light.turn_on
+      data:
+        entity_id: light.kitchen_cabinets
+    - service: switch.turn_on
+      data:
+        entity_id: switch.living_room_corner

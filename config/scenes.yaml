@@ -1,0 +1,122 @@
+- id: '1579726678052'
+  name: Living Room Evening
+  entities:
+    light.kitchen_cabinets:
+      brightness: 1
+      friendly_name: Kitchen
+      state: 'on'
+      supported_features: 41
+    light.living_room_couch_1:
+      brightness: 1
+      friendly_name: Couch 1
+      state: 'on'
+      supported_features: 41
+    light.living_room_couch_2:
+      brightness: 1
+      friendly_name: Couch 2
+      state: 'on'
+      supported_features: 41
+    light.living_room_couch_3:
+      brightness: 1
+      friendly_name: Couch 3
+      state: 'on'
+      supported_features: 41
+    light.living_room_ridge:
+      brightness: 3
+      color_temp: 423
+      friendly_name: Ridge
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 43
+    light.living_room_turtle_chair:
+      brightness: 1
+      color_temp: 373
+      friendly_name: Turtle chair
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 43
+    switch.living_room_corner:
+      friendly_name: Corner
+      linkquality: 60
+      state: 'on'
+- id: '1579726887557'
+  name: Living Room Shawarma
+  entities:
+    light.kitchen_cabinets:
+      brightness: 244
+      friendly_name: Kitchen
+      state: 'on'
+      supported_features: 41
+    light.living_room_couch_1:
+      brightness: 255
+      friendly_name: Couch 1
+      state: 'on'
+      supported_features: 41
+    light.living_room_couch_2:
+      brightness: 255
+      friendly_name: Couch 2
+      state: 'on'
+      supported_features: 41
+    light.living_room_couch_3:
+      brightness: 255
+      friendly_name: Couch 3
+      state: 'on'
+      supported_features: 41
+    light.living_room_ridge:
+      brightness: 255
+      color_temp: 153
+      friendly_name: Ridge
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 43
+    light.living_room_turtle_chair:
+      brightness: 255
+      color_temp: 153
+      friendly_name: Turtle chair
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 43
+    switch.living_room_corner:
+      friendly_name: Corner
+      linkquality: 60
+      state: 'on'
+- id: '1579734722178'
+  name: Room Rein Evening
+  entities:
+    light.room_rein_1:
+      brightness: 1
+      friendly_name: Rein 1
+      state: 'on'
+      supported_features: 41
+    light.room_rein_2:
+      brightness: 1
+      friendly_name: Rein 2
+      state: 'on'
+      supported_features: 41
+    light.room_rein_bed:
+      brightness: 1
+      friendly_name: Rein bed
+      state: 'on'
+      supported_features: 41
+- id: '1579734766317'
+  name: Room Rein Bright
+  entities:
+    light.room_rein_1:
+      brightness: 254
+      friendly_name: Rein 1
+      state: 'on'
+      supported_features: 41
+    light.room_rein_2:
+      brightness: 253
+      friendly_name: Rein 2
+      state: 'on'
+      supported_features: 41
+    light.room_rein_bed:
+      brightness: 253
+      friendly_name: Rein bed
+      state: 'on'
+      supported_features: 41

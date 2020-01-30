@@ -1,0 +1,38 @@
+# Home Assistant
+default_config:
+frontend:             !include includes/hass/frontend.yaml
+homeassistant:        !include includes/hass/homeassistant.yaml
+http:                 !include includes/hass/http.yaml
+recorder:             !include includes/hass/recorder.yaml
+
+# General
+automation:           !include automations.yaml
+automation old:       !include_dir_merge_list includes/automations
+scene:                !include scenes.yaml
+script:               !include scripts.yaml
+
+# Entities
+binary_sensor:        !include includes/entities/binary_sensors.yaml
+climate:              !include includes/entities/climates.yaml
+fan:                  !include includes/entities/fans.yaml
+input_number:         !include includes/entities/input_numbers.yaml
+input_boolean:        !include includes/entities/input_booleans.yaml
+light:                !include includes/entities/lights.yaml
+sensor:               !include includes/entities/sensors.yaml
+switch:               !include includes/entities/switches.yaml
+zone:                 !include includes/entities/zones.yaml
+
+# Integrations
+# alarm_control_panel:  !include includes/integrations/alarm_control_panel.yaml
+camera:               !include includes/integrations/camera.yaml
+homekit:              !include includes/integrations/homekit.yaml
+ios:                  !include includes/integrations/ios.yaml
+media_player:         !include includes/integrations/media_player.yaml
+mqtt:                 !include includes/integrations/mqtt.yaml
+# notify:               !include includes/integrations/notify.yaml
+# telegram_bot:         !include includes/integrations/telegram_bot.yaml
+tplink:               !include includes/integrations/tplink.yaml
+tts:                  !include includes/integrations/tts.yaml
+tuya:                 !include includes/integrations/tuya.yaml
+weather:              !include includes/integrations/weather.yaml
+webostv:              !include includes/integrations/webostv.yaml

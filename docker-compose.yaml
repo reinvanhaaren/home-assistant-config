@@ -1,0 +1,42 @@
+version: '3.2'
+
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: homeassistant/home-assistant:stable
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./config:/config
+    environment:
+      - TZ=Europe/Amsterdam
+
+  mosquitto:
+    container_name: mosquitto
+    image: eclipse-mosquitto:latest
+    restart: unless-stopped
+    ports:
+      - 1883:1883
+      - 9001:9001
+    volumes:
+      - ./mosquitto:/mosquitto
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+
+  zigbee2mqtt:
+    container_name: zigbee2mqtt
+    image: koenkk/zigbee2mqtt
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./zigbee2mqtt:/app/data
+    devices:
+      - /dev/ttyACM0:/dev/ttyACM0
+
+  zigbee2mqttassistant:
+    container_name: zigbee2mqttassistant
+    image: carldebilly/zigbee2mqttassistant:linux-x64
+    restart: unless-stopped
+    ports:
+      - 8880:80
+    environment:
+      - Z2MA_SETTINGS__MQTTSERVER=mosquitto

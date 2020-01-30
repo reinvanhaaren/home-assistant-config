@@ -1,0 +1,71 @@
+---
+- platform: mqtt
+  schema: json
+  name: Couch
+  command_topic: 'zigbee2mqtt/living_room_couch/set'
+  state_topic: 'zigbee2mqtt/living_room_couch'
+  color_temp: false
+  brightness: true
+  rgb: false
+
+- platform: mqtt
+  schema: json
+  name: Hallway
+  command_topic: 'zigbee2mqtt/hallway/set'
+  state_topic: 'zigbee2mqtt/hallway'
+  color_temp: false
+  brightness: true
+  rgb: false
+
+- platform: mqtt
+  schema: json
+  name: Rein ceiling
+  command_topic: 'zigbee2mqtt/room_rein_ceiling/set'
+  state_topic: 'zigbee2mqtt/room_rein_ceiling'
+  color_temp: false
+  brightness: true
+  rgb: false
+
+- platform: mqtt
+  schema: json
+  name: Bas ceiling
+  command_topic: 'zigbee2mqtt/room_bas_ceiling/set'
+  state_topic: 'zigbee2mqtt/room_bas_ceiling'
+  color_temp: false
+  brightness: true
+  rgb: false
+
+- platform: switch
+  name: Corner
+  entity_id: switch.living_room_corner
+
+- platform: group
+  name: All
+  entities:
+    - light.living_room_ridge
+    - light.living_room_turtle_chair
+    - light.couch
+    - light.kitchen_cabinets
+    - light.hallway
+    - light.room_rein
+    - light.room_bas
+
+- platform: group
+  name: Living room
+  entities:
+    - light.couch
+    - light.living_room_ridge
+    - light.living_room_turtle_chair
+
+- platform: group
+  name: Room Rein
+  entities:
+    - light.room_rein_1
+    - light.room_rein_2
+    - light.room_rein_bed
+
+- platform: group
+  name: Room Bas
+  entities:
+    - light.bas_ceiling
+    - light.room_bas_bed

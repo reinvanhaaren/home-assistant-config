@@ -1,0 +1,8 @@
+person.rein_van_haaren:
+  entity_picture: https://pbs.twimg.com/profile_images/949761928548765696/QMzBv78V.jpg
+person.bas_menting:
+  entity_picture: https://pbs.twimg.com/profile_images/994887372033744897/oweqDn79_400x400.jpg
+binary_sensor.washing_machine:
+  icon: mdi:washing-machine
+sensor.washing_machine_watts:
+  icon: mdi:power-plug

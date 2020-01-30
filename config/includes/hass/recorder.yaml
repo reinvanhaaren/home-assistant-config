@@ -1,0 +1,2 @@
+---
+db_url: !secret mysql_connection_url

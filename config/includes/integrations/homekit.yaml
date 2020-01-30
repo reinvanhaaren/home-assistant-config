@@ -1,0 +1,25 @@
+---
+filter:
+  include_entities:
+    - input_boolean.guest_mode
+    - light.living_room_couch_1
+    - light.living_room_couch_2
+    - light.living_room_couch_3
+    - light.living_room_ridge
+    - light.living_room_turtle_chair
+    - light.corner
+    - light.kitchen_cabinets
+    - light.room_rein_1
+    - light.room_rein_2
+    - light.room_rein_bed
+    - light.bas_ceiling
+    - light.room_bas_bed
+    - light.hallway_1
+    - light.hallway_2
+    - light.hallway_3
+    - light.hallway_4
+    - scene.living_room_evening
+    - scene.living_room_shawarma
+    - scene.room_rein_evening
+    - scene.room_rein_bright
+    - climate.heating

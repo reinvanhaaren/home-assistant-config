@@ -1,0 +1,21 @@
+---
+- alias: 'Button: Room Rein wall: on'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: sensor.button_room_rein_wall
+      to: 'on'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.room_rein
+- alias: 'Button: Room Rein wall: off'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: sensor.button_room_rein_wall
+      to: 'off'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.room_rein

@@ -1,0 +1,4 @@
+---
+# - platform: telegram
+#   name: Telegram Rein
+#   chat_id: !secret telegram_chat_id_rein

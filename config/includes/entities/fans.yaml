@@ -1,0 +1,16 @@
+---
+- platform: mqtt
+  name: Ventilation
+  state_topic: 'home/ventilation/on/state'
+  command_topic: 'home/ventilation/on/set'
+  speed_state_topic: 'home/ventilation/speed/state'
+  speed_command_topic: 'home/ventilation/speed/set'
+  qos: 0
+  payload_on: 'true'
+  payload_off: 'false'
+  payload_low_speed: 'low'
+  payload_high_speed: 'high'
+  speeds:
+    - 'off'
+    - low
+    - high

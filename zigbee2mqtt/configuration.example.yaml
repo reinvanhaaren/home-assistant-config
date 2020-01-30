@@ -1,0 +1,18 @@
+homeassistant: true
+permit_join: false
+mqtt:
+  base_topic: zigbee2mqtt
+  server: 'mqtt://mosquitto'
+serial:
+  port: /dev/ttyACM0
+devices:
+  'device-id-remove-before-use':
+    friendly_name: friendly_name_remove_before_use
+groups:
+  '1':
+    friendly_name: group_with_friendly_name
+    retain: false
+    transition: 1
+    optimistic: true
+    devices:
+      - 'device-id-remove-before-use'
