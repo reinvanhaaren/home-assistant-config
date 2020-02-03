@@ -4,15 +4,15 @@
     ventilation:
       friendly_name: 'Ventilation'
       value_template: >
-        {% if states.sensor.ventilation_usage.state|int >= 5 %}
+        {% if states.sensor.ventilation_usage.state|int >= 6 %}
         on
         {% else %}
         off
         {% endif %}
       speed_template: >
-        {% if states.sensor.ventilation_usage.state|int >= 10 %}
+        {% if states.sensor.ventilation_usage.state|int >= 15 %}
         high
-        {% elif states.sensor.ventilation_usage.state|int >= 5 %}
+        {% elif states.sensor.ventilation_usage.state|int >= 6 %}
         medium
         {% else %}
         low

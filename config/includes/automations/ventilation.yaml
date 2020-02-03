@@ -4,7 +4,7 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.ventilation_usage
-    below: 5
+    below: 6
   action:
     - service: script.toggle
       entity_id: script.ventilation_off
@@ -13,8 +13,8 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.ventilation_usage
-    above: 5
-    below: 10
+    above: 6
+    below: 15
   action:
     - service: script.toggle
       entity_id: script.ventilation_medium
@@ -23,7 +23,7 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.ventilation_usage
-    above: 10
+    above: 15
   action:
     - service: script.toggle
       entity_id: script.ventilation_high

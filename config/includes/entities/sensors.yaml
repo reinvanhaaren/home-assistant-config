@@ -1,11 +1,16 @@
 ---
 - platform: template
   sensors:
-    washing_machine_watts:
+    washing_machine_usage:
       friendly_name: Washing machine usage
       value_template: >
         {{ state_attr('switch.washing_machine', 'current_power_w') | replace(' W', '') | float('Unavailable') }}
-      unit_of_measurement: Watt
+      unit_of_measurement: W
+    ventilation_usage:
+      friendly_name: Ventilation usage
+      value_template: >
+        {{ state_attr('switch.ventilation', 'current_power_w') | replace(' W', '') | float('Unavailable') }}
+      unit_of_measurement: W
     start_time_washing_machine:
       friendly_name: Start time washing machine
       value_template: >
@@ -19,11 +24,6 @@
   name: Temperature
   unit_of_measurement: '°C'
   state_topic: 'home/temperature'
-
-- platform: mqtt
-  name: Ventilation usage
-  unit_of_measurement: Watt
-  state_topic: 'home/ventilation/usage'
 
 - platform: systemmonitor
   resources:

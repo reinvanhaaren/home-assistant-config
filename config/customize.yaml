@@ -4,7 +4,7 @@ person.bas_menting:
   entity_picture: https://pbs.twimg.com/profile_images/994887372033744897/oweqDn79_400x400.jpg
 binary_sensor.washing_machine:
   icon: mdi:washing-machine
-sensor.washing_machine_watts:
+sensor.washing_machine_usage:
   icon: mdi:power-plug
 sensor.start_time_washing_machine:
   icon: mdi:washing-machine-alert

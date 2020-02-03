@@ -4,7 +4,7 @@
     washing_machine:
       friendly_name: Washing machine
       value_template: >
-        {{ states('sensor.washing_machine_watts') | float(0) > 3 }}
+        {{ states('sensor.washing_machine_usage') | float(0) > 3 }}
       delay_on: '00:01:00'
       delay_off: '00:04:00'
     tv_source_youtube:
