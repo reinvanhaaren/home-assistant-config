@@ -17,7 +17,7 @@
 - [Welcome](#welcome)
 - [General](#general)
   <!-- - [Docker](#docker) -->
-- [Automations](#automations)
+- [Functionality worth mentioning](#Functionality-worth-mentioning)
 - [Devices](#devices)
   <!-- - [Sensors](#sensors)
   - [Buttons](#buttons)
@@ -51,6 +51,20 @@ I run Home Assistant in a Docker stack next to mosquitto, zigbee2mqtt and zigbee
 
 I make use of the Home Assistant Community Store (HACS) to manage some third-party modules, [listed below](#installed-hacs-modules). For the frontend I use Bas Nijholt's [iOS Dark Mode Theme](https://github.com/basnijholt/lovelace-ios-dark-mode-theme) theme with HomeKit background 4.
 
+## Functionality worth mentioning
+
+### Washing machine
+
+The usage of our washing machine is measured by a TP-Link HS110. When the washing machine is done (usage below 3 watts for more than 4 minutes) a push notification is sent to me and Bas. Besides the notification, I also soldered a nodemcu with relay board onto the start-button of the (dumb) washing machine. We can set the end time in Home Assistant and enable 'Auto-start'. The washing machine will automatically start (by close the relay for half a second) on the desired end time minus the average program duration of 1 hour and 45 minutes. When starting the washing machine the 'Auto-start' is turned off again.
+
+### TV
+
+We use a Tuya connected light bulb from LSC Connect (smart lighting from [Action](https://www.action.com/nl-nl/brand/lsc-smart-connect/)) to create a 'ambilight' on the white wall behind our TV. When te light in the living room is turned on, the light behind the TV is a nice purple. When you start Spotify, TuneIn Radio, Netflix or YouTube the light changes color to green or red. This works with the internal LG WEbOS-apps or with the Chromecast attached to the TV.
+
+### Christmas Tree
+
+We have a small christmas tree in the living room, just for fun. Why enjoy the lights in the tree in december only? There is a IKEA TRÅDFRI switch to turn the lights on and off.
+
 ## Devices
 
 ### Sensors
@@ -62,13 +76,15 @@ I make use of the Home Assistant Community Store (HACS) to manage some third-par
 
 ### Lights
 
-| Amount | Manufacturer | Description                   | Type               |
-| ------ | ------------ | ----------------------------- | ------------------ |
-| 5x     | IKEA         | TRÅDFRI LED bulb E26/E27      | LED1545G12         |
-| 2x     | IKEA         | TRÅDFRI LED bulb E27 WW clear | LED1842G3          |
-| 3x     | IKEA         | TRÅDFRI LED bulb E12/E14/E17  | LED1649C5          |
-| 5x     | IKEA         | TRÅDFRI LED Spot GU10         | LED1650R5          |
-| 1x     | IKEA         | TRÅDFRI driver 10 watt        | ICPSHC24-10EU-IL-1 |
+| Amount | Manufacturer      | Description                   | Type               |
+| ------ | ----------------- | ----------------------------- | ------------------ |
+| 5x     | IKEA              | TRÅDFRI LED bulb E26/E27      | LED1545G12         |
+| 2x     | IKEA              | TRÅDFRI LED bulb E27 WW clear | LED1842G3          |
+| 3x     | IKEA              | TRÅDFRI LED bulb E12/E14/E17  | LED1649C5          |
+| 5x     | IKEA              | TRÅDFRI LED Spot GU10         | LED1650R5          |
+| 1x     | IKEA              | TRÅDFRI driver 10 watt        | ICPSHC24-10EU-IL-1 |
+| 1x     | LSC Smart Connect | Smart filament LED bulb       | Tuya connected     |
+| 1x     | LSC Smart Connect | Smart multicolor LED bulb     | Tuya connected     |
 
 ### Switches
 

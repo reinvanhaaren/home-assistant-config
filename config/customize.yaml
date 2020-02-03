@@ -6,3 +6,7 @@ binary_sensor.washing_machine:
   icon: mdi:washing-machine
 sensor.washing_machine_watts:
   icon: mdi:power-plug
+sensor.start_time_washing_machine:
+  icon: mdi:washing-machine-alert
+sensor.end_time_washing_machine:
+  icon: mdi:washing-machine-off

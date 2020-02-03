@@ -9,12 +9,6 @@
     - service: light.toggle
       data:
         entity_id: light.living_room
-    - service: light.toggle
-      data:
-        entity_id: light.kitchen_cabinets
-    - service: switch.toggle
-      data:
-        entity_id: switch.living_room_corner
 - alias: 'Button: Living room wall: toggle_hold'
   initial_state: 'on'
   trigger:
@@ -25,9 +19,43 @@
     - service: light.turn_on
       data:
         entity_id: light.living_room
-    - service: light.turn_on
+- alias: 'Button: Living room wall: brightness_up_click'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: sensor.button_living_room_wall
+      to: 'brightness_up_click'
+  action:
+    - service: script.brightness_up
       data:
-        entity_id: light.kitchen_cabinets
-    - service: switch.turn_on
+        entity_id: light.living_room
+- alias: 'Button: Living room wall: brightness_down_click'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: sensor.button_living_room_wall
+      to: 'brightness_down_click'
+  action:
+    - service: script.brightness_down
       data:
-        entity_id: switch.living_room_corner
+        entity_id: light.living_room
+- alias: 'Button: Living room wall: arrow_left_click'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: sensor.button_living_room_wall
+      to: 'arrow_left_click'
+  action:
+    - service: scene.turn_on
+      data:
+        entity_id: scene.living_room_evening
+- alias: 'Button: Living room wall: arrow_right_click'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: sensor.button_living_room_wall
+      to: 'arrow_right_click'
+  action:
+    - service: scene.turn_on
+      data:
+        entity_id: scene.living_room_shawarma

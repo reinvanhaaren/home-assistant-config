@@ -7,3 +7,61 @@
         {{ states('sensor.washing_machine_watts') | float(0) > 3 }}
       delay_on: '00:01:00'
       delay_off: '00:04:00'
+    tv_source_youtube:
+      friendly_name: TV source YouTube
+      value_template: >
+        {{
+          states('media_player.tv') == 'on' and
+          (
+            state_attr('media_player.tv', 'source') == 'YouTube' or
+            (
+              state_attr('media_player.tv', 'source') == 'HDMI3' and
+              state_attr('media_player.chromecast', 'app_name') == 'YouTube'
+            )
+          )
+        }}
+    tv_source_spotify:
+      friendly_name: TV source Spotify
+      value_template: >
+        {{
+          states('media_player.tv') == 'on' and
+          (
+            state_attr('media_player.tv', 'source') == 'Spotify Music - Luister gratis op LG TV' or
+            (
+              state_attr('media_player.tv', 'source') == 'HDMI3' and
+              state_attr('media_player.chromecast', 'app_name') == 'Spotify'
+            )
+          )
+        }}
+    tv_source_netflix:
+      friendly_name: TV source Netflix
+      value_template: >
+        {{
+          states('media_player.tv') == 'on' and
+          (
+            state_attr('media_player.tv', 'source') == 'Netflix' or
+            (
+              state_attr('media_player.tv', 'source') == 'HDMI3' and
+              state_attr('media_player.chromecast', 'app_name') == 'Netflix'
+            )
+          )
+        }}
+    tv_source_tunein:
+      friendly_name: TV source TuneIn
+      value_template: >
+        {{
+          states('media_player.tv') == 'on' and
+          (
+            state_attr('media_player.tv', 'source') == 'HDMI3' and
+            state_attr('media_player.chromecast', 'app_name') == 'TuneIn Free'
+          )
+        }}
+    tv_source_off:
+      friendly_name: TV source off
+      value_template: >
+        {{
+          states('binary_sensor.tv_source_youtube') == 'off' and
+          states('binary_sensor.tv_source_spotify') == 'off' and
+          states('binary_sensor.tv_source_netflix') == 'off' and
+          states('binary_sensor.tv_source_tunein') == 'off'
+        }}

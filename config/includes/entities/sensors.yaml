@@ -2,10 +2,18 @@
 - platform: template
   sensors:
     washing_machine_watts:
+      friendly_name: Washing machine usage
       value_template: >
         {{ state_attr('switch.washing_machine', 'current_power_w') | replace(' W', '') | float('Unavailable') }}
       unit_of_measurement: Watt
-      friendly_name: Washing machine usage
+    start_time_washing_machine:
+      friendly_name: Start time washing machine
+      value_template: >
+        {{ (as_timestamp(states('input_datetime.end_time_washing_machine')) - 6300) | timestamp_custom('%d-%m-%Y %H:%M:%S') }}
+    end_time_washing_machine:
+      friendly_name: End time washing machine
+      value_template: >
+        {{ as_timestamp(states('input_datetime.end_time_washing_machine')) | timestamp_custom('%d-%m-%Y %H:%M:%S') }}
 
 - platform: mqtt
   name: Temperature
@@ -15,7 +23,7 @@
 - platform: mqtt
   name: Ventilation usage
   unit_of_measurement: Watt
-  state_topic: 'home/ventilation'
+  state_topic: 'home/ventilation/usage'
 
 - platform: systemmonitor
   resources:
@@ -29,8 +37,6 @@
     - type: processor_use
     - type: last_boot
 
-# - platform: trakt
-#   id: 'sakdfjawioehrw3985728935uksdf'
-#   secret: 'sdfoiwahjeflkaswjefi83q7829045uoijksldf'
-#   username: iantrich
-#   days: 10
+- platform: time_date
+  display_options:
+    - 'time'

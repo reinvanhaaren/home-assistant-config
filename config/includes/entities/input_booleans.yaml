@@ -3,3 +3,10 @@ guest_mode:
   name: Guest mode
   icon: mdi:bag-checked
   initial: off
+enable_washing_machine_schedule:
+  name: Enable washing machine schedule
+  icon: mdi:clock-check
+  initial: off
+dummy:
+  name: Dummy input boolean
+  initial: off

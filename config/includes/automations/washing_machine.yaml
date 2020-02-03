@@ -1,0 +1,32 @@
+---
+- alias: 'Washing machine: Done notification'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.washing_machine
+    from: 'on'
+    to: 'off'
+  action:
+    - service: notify.mobile_app_iphone_rein
+      data:
+        message: 'Washing machine is done 👚👕'
+    - service: notify.tv
+      data:
+        message: 'Washing machine is done'
+- alias: 'Washing machine: Start on time'
+  initial_state: 'on'
+  trigger:
+    platform: template
+    value_template: '{{ states.sensor.time.state == states.input_datetime.end_time_washing_machine.state[0:5] }}'
+  condition:
+    - condition: state
+      entity_id: input_boolean.enable_washing_machine_schedule
+      state: 'on'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.end_time_washing_machine
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.enable_washing_machine_schedule
+    - service: notify.mobile_app_iphone_rein
+      data:
+        message: 'Washing machine started! 👚👕'

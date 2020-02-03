@@ -1,0 +1,6 @@
+---
+end_time_washing_machine:
+  name: End time washing machine
+  has_date: true
+  has_time: true
+  icon: mdi:clock-digital

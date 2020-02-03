@@ -14,15 +14,22 @@ play_sound:
 brightness_up:
   alias: Brightness up
   sequence:
-  - condition: state
-    entity_id: light.living_room
-    state: 'on'
   - service: light.turn_on
     data_template:
       entity_id: light.living_room
       transition: 1
       brightness: >
-        {% set n = state_attr('light.living_room_ridge', 'brightness') | int + 100 %}
+        {% set n = states.input_number.brightness_living_room.state | int + 100 %}
+        {% if n > 255 %}
+        255
+        {% else %}
+        {{ n }}
+        {% endif %}
+  - service: input_number.set_value
+    data_template:
+      entity_id: input_number.brightness_living_room
+      value: >
+        {% set n = states.input_number.brightness_living_room.state | int + 100 %}
         {% if n > 255 %}
         255
         {% else %}
@@ -31,23 +38,75 @@ brightness_up:
 brightness_down:
   alias: Brightness down
   sequence:
-  - condition: state
-    entity_id: light.living_room
-    state: 'on'
   - service: light.turn_on
     data_template:
       entity_id: light.living_room
       transition: 1
       brightness: >
-        {% set n = state_attr('light.living_room_ridge', 'brightness') | int - 100 %}
+        {% set n = states.input_number.brightness_living_room.state | int - 100 %}
         {% if n <= 1 %}
         1
         {% else %}
         {{ n }}
         {% endif %}
-
-# {% if states.input_number.brightness | int <= 230 %}
-# {{ states.input_number.brightness | int + 25 }}
-# {% else %}
-# 255
-# {% endif %}
+  - service: input_number.set_value
+    data_template:
+      entity_id: input_number.brightness_living_room
+      value: >
+        {% set n = states.input_number.brightness_living_room.state | int - 100 %}
+        {% if n <= 1 %}
+        1
+        {% else %}
+        {{ n }}
+        {% endif %}
+set_brightness:
+  alias: Set brightness
+  sequence:
+  - service: light.turn_on
+    data_template:
+      entity_id: '{{ entity_id }}'
+      brightness: >
+        {% set n = brightness|float %}
+        {% if n == 0 %}
+        0
+        {% else %}
+        {% if min_brightness is defined %}
+        {% set min = min_brightness %}
+        {% else %}
+        {% set min = 1 %}
+        {% endif %}
+        {% if max_brightness is defined %}
+        {% set max = max_brightness %}
+        {% else %}
+        {% set max = 255 %}
+        {% endif %}
+        {% set t = (((n/255)*(255 - min - (255 - max))) + min)|int %}
+        {{ t }}
+        {% endif %}
+ventilation_set_speed:
+  alias: Ventilation set speed
+  sequence:
+  - service: script.toggle
+    data_template:
+      entity_id: 'script.ventilation_{{ speed }}'
+ventilation_off:
+  alias: Ventilation off
+  sequence:
+  - service: switch.turn_off
+    entity_id: switch.ventilation_medium
+  - service: switch.turn_off
+    entity_id: switch.ventilation_high
+ventilation_medium:
+  alias: Ventilation low
+  sequence:
+  - service: switch.turn_off
+    entity_id: switch.ventilation_high
+  - service: switch.turn_on
+    entity_id: switch.ventilation_medium
+ventilation_high:
+  alias: Ventilation high
+  sequence:
+  - service: switch.turn_off
+    entity_id: switch.ventilation_medium
+  - service: switch.turn_on
+    entity_id: switch.ventilation_high

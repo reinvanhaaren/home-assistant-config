@@ -36,8 +36,8 @@
   rgb: false
 
 - platform: switch
-  name: Corner
-  entity_id: switch.living_room_corner
+  name: Christmas tree
+  entity_id: switch.living_room_christmas_tree
 
 - platform: group
   name: All
@@ -56,6 +56,10 @@
     - light.couch
     - light.living_room_ridge
     - light.living_room_turtle_chair
+    - light.tv
+    - light.corner
+    - light.kitchen
+    - light.christmas_tree
 
 - platform: group
   name: Room Rein
@@ -69,3 +73,93 @@
   entities:
     - light.bas_ceiling
     - light.room_bas_bed
+
+- platform: template
+  lights:
+    tv:
+      friendly_name: 'TV'
+      level_template: >
+        {% set n = states.light.living_room_tv.attributes.brightness|int %}
+        {% if n == 0 %}
+        0
+        {% else %}
+        {% set b = ((n-29)/(255 - 29 - (255 - 255)))*255 %}
+        {% if b < 1 %}
+        0
+        {% else %}
+        {{ b|int }}
+        {% endif %}
+        {% endif %}
+      value_template: '{{ states.light.living_room_tv.attributes.brightness|int > 26 }}'
+      turn_on:
+        service: light.turn_on
+        data:
+          entity_id: light.living_room_tv
+      turn_off:
+        service: light.turn_off
+        data:
+          entity_id: light.living_room_tv
+      set_level:
+        service: script.set_brightness
+        data_template:
+          entity_id: light.living_room_tv
+          brightness: '{{ brightness }}'
+          min_brightness: 29
+    corner:
+      friendly_name: 'Corner'
+      level_template: >
+        {% set n = states.light.living_room_corner.attributes.brightness|int %}
+        {% if n == 0 %}
+        0
+        {% else %}
+        {% set b = ((n-29)/(255 - 29 - (255 - 255)))*255 %}
+        {% if b < 1 %}
+        0
+        {% else %}
+        {{ b|int }}
+        {% endif %}
+        {% endif %}
+      value_template: '{{ states.light.living_room_corner.attributes.brightness|int > 26 }}'
+      turn_on:
+        service: light.turn_on
+        data:
+          entity_id: light.living_room_corner
+      turn_off:
+        service: light.turn_off
+        data:
+          entity_id: light.living_room_corner
+      set_level:
+        service: script.set_brightness
+        data_template:
+          entity_id: light.living_room_corner
+          brightness: '{{ brightness }}'
+          min_brightness: 29
+    kitchen:
+      friendly_name: 'Kitchen'
+      level_template: >
+        {% set n = states.light.kitchen_cabinets.attributes.brightness|int %}
+        {% if n == 0 %}
+        0
+        {% else %}
+        {% set b = ((n-0)/(255 - 0 - (255 - 245)))*255 %}
+        {% if b < 1 %}
+        0
+        {% else %}
+        {{ b|int }}
+        {% endif %}
+        {% endif %}
+      value_template: '{{ states.light.kitchen_cabinets.state }}'
+      turn_on:
+        service: light.turn_on
+        data:
+          entity_id: light.kitchen_cabinets
+      turn_off:
+        service: light.turn_off
+        data:
+          entity_id: light.kitchen_cabinets
+      set_level:
+        service: script.set_brightness
+        data_template:
+          entity_id: light.kitchen_cabinets
+          brightness: '{{ brightness }}'
+          max_brightness: 245

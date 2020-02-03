@@ -1,18 +1,4 @@
 ---
-- alias: 'Utilities: washing machine is done'
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: binary_sensor.washing_machine
-    from: 'on'
-    to: 'off'
-  action:
-    - service: notify.mobile_app_iphone_rein
-      data:
-        message: 'Washing machine is done 👚👕'
-    - service: notify.tv
-      data:
-        message: 'Washing machine is done'
 - alias: 'Utilities: Chromecast off when TV off'
   initial_state: 'on'
   trigger:

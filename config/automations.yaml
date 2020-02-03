@@ -1,14 +1,3 @@
-- id: '1579810915316'
-  alias: testRein
-  description: ''
-  trigger:
-  - entity_id: sensor.cube_living_room
-    platform: state
-    to: flip90
-  condition: []
-  action:
-  - entity_id: light.corner
-    service: light.toggle
 - id: '1579814218996'
   alias: Bright
   description: ''

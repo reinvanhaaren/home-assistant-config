@@ -6,6 +6,14 @@
       friendly_name: Kitchen
       state: 'on'
       supported_features: 41
+    light.living_room_corner:
+      brightness: 36
+      color_temp: 303
+      friendly_name: Corner
+      max_mireds: 1000
+      min_mireds: 100
+      state: 'on'
+      supported_features: 3
     light.living_room_couch_1:
       brightness: 1
       friendly_name: Couch 1
@@ -22,8 +30,8 @@
       state: 'on'
       supported_features: 41
     light.living_room_ridge:
-      brightness: 3
-      color_temp: 423
+      brightness: 1
+      color_temp: 444
       friendly_name: Ridge
       max_mireds: 500
       min_mireds: 153
@@ -31,24 +39,33 @@
       supported_features: 43
     light.living_room_turtle_chair:
       brightness: 1
-      color_temp: 373
+      color_temp: 451
       friendly_name: Turtle chair
       max_mireds: 500
       min_mireds: 153
       state: 'on'
       supported_features: 43
-    switch.living_room_corner:
-      friendly_name: Corner
-      linkquality: 60
+    light.tv:
+      brightness: 0
+      friendly_name: TV
       state: 'on'
+      supported_features: 1
 - id: '1579726887557'
   name: Living Room Shawarma
   entities:
     light.kitchen_cabinets:
-      brightness: 244
+      brightness: 235
       friendly_name: Kitchen
       state: 'on'
       supported_features: 41
+    light.living_room_corner:
+      brightness: 250
+      color_temp: 100
+      friendly_name: Corner
+      max_mireds: 1000
+      min_mireds: 100
+      state: 'on'
+      supported_features: 3
     light.living_room_couch_1:
       brightness: 255
       friendly_name: Couch 1
@@ -80,10 +97,11 @@
       min_mireds: 153
       state: 'on'
       supported_features: 43
-    switch.living_room_corner:
-      friendly_name: Corner
-      linkquality: 60
+    light.tv:
+      brightness: 0
+      friendly_name: TV
       state: 'on'
+      supported_features: 1
 - id: '1579734722178'
   name: Room Rein Evening
   entities:

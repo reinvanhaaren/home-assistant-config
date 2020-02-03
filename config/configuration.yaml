@@ -15,8 +15,9 @@ script:               !include scripts.yaml
 binary_sensor:        !include includes/entities/binary_sensors.yaml
 climate:              !include includes/entities/climates.yaml
 fan:                  !include includes/entities/fans.yaml
-input_number:         !include includes/entities/input_numbers.yaml
 input_boolean:        !include includes/entities/input_booleans.yaml
+input_datetime:       !include includes/entities/input_datetime.yaml
+input_number:         !include includes/entities/input_numbers.yaml
 light:                !include includes/entities/lights.yaml
 sensor:               !include includes/entities/sensors.yaml
 switch:               !include includes/entities/switches.yaml
