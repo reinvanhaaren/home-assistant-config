@@ -225,16 +225,6 @@ views:
     - entity: media_player.spotify_rein
       type: custom:mini-media-player
     type: vertical-stack
-  - cards:
-    - entity: light.hallway_1
-      hold_action:
-        action: more-info
-      show_icon: true
-      show_name: true
-      tap_action:
-        action: toggle
-      type: entity-button
-    type: horizontal-stack
   icon: mdi:monitor-speaker
   path: media-players
   title: Media Players
