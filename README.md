@@ -9,6 +9,7 @@
 [![GitHub Forks][forks-badge]][forks]
 
 [![Home Assistant version][hass-version-badge]][hass-version]
+[![Home Assistant Community Store version][hacs-version-badge]][hacs-version]
 
 [![Buy me a coffee][buymeacoffee-badge]][buymeacoffee]
 
@@ -208,6 +209,8 @@ I would love to share new ideas! Please contact me by e-mail or open a issue in 
 [forks-badge]: https://badgen.net/github/forks/reinvanhaaren/home-assistant-config
 [hass-version]: https://www.home-assistant.io/blog/2020/01/15/release-104/
 [hass-version-badge]: https://img.shields.io/badge/Home%20Assistant-0.104.3-brightgreen.svg
+[hacs-version]: https://www.home-assistant.io/blog/2020/01/15/release-104/
+[hacs-version-badge]: https://img.shields.io/badge/Home%20Assistant%20Community%20Store-0.20.9-brightgreen.svg
 [buymeacoffee]: https://www.buymeacoffee.com/reinvanhaaren
 [buymeacoffee-badge]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
 [flag-nl]: https://raw.githubusercontent.com/oxguy3/flags/master/mini/nl.png
