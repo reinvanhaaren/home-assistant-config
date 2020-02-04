@@ -2,9 +2,9 @@
 - host: !secret lg_tv_ip_address
   name: TV
   turn_on_action:
-    service: media_player.turn_on
+    service: wake_on_lan.send_magic_packet
     data:
-      entity_id: media_player.chromecast
+      mac: !secret lg_tv_mac_address
   customize:
     sources:
       - HDMI1
