@@ -42,10 +42,10 @@
     - 'time'
 
 - platform: version
-  name: Installed HASS ersion
+  name: Installed HASS version
   source: local
 
 - platform: version
-  name: Available HASS ersion
+  name: Available HASS version
   image: default
   source: docker
