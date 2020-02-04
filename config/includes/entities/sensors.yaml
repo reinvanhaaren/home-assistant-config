@@ -40,3 +40,12 @@
 - platform: time_date
   display_options:
     - 'time'
+
+- platform: version
+  name: Installed HASS ersion
+  source: local
+
+- platform: version
+  name: Available HASS ersion
+  image: default
+  source: docker
