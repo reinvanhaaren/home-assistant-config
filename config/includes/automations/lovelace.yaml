@@ -1,0 +1,8 @@
+---
+- alias: 'Lovelace: Convert lovelace to YAML-file'
+  initial_state: 'on'
+  trigger:
+  - event: start
+    platform: homeassistant
+  action:
+    service: shell_command.convert_lovelace_to_yaml

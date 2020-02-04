@@ -20,6 +20,7 @@ input_datetime:       !include includes/entities/input_datetime.yaml
 input_number:         !include includes/entities/input_numbers.yaml
 light:                !include includes/entities/lights.yaml
 sensor:               !include includes/entities/sensors.yaml
+shell_command:        !include includes/entities/shell_commands.yaml
 switch:               !include includes/entities/switches.yaml
 zone:                 !include includes/entities/zones.yaml
 
