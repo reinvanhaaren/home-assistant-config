@@ -10,3 +10,9 @@ sensor.start_time_washing_machine:
   icon: mdi:washing-machine-alert
 sensor.end_time_washing_machine:
   icon: mdi:washing-machine-off
+switch.button_ventilation_off:
+  icon: mdi:fan-off
+switch.button_ventilation_medium:
+  icon: mdi:fan
+switch.button_ventilation_high:
+  icon: mdi:weather-windy

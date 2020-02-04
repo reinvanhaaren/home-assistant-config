@@ -15,6 +15,42 @@
           entity_id: climate.heating
           preset_mode: none
 
+- platform: template
+  switches:
+    button_ventilation_off:
+      friendly_name: Ventilation off
+      value_template: "{{ is_state('switch.ventilation_medium', 'off') and is_state('switch.ventilation_high', 'off') }}"
+      turn_on:
+        service: script.toggle
+        data:
+          entity_id: script.ventilation_off
+      turn_off:
+        service: script.toggle
+        data:
+          entity_id: script.ventilation_off
+    button_ventilation_medium:
+      friendly_name: Ventilation medium
+      value_template: "{{ is_state('switch.ventilation_medium', 'on') }}"
+      turn_on:
+        service: script.toggle
+        data:
+          entity_id: script.ventilation_medium
+      turn_off:
+        service: script.toggle
+        data:
+          entity_id: script.ventilation_medium
+    button_ventilation_high:
+      friendly_name: Ventilation high
+      value_template: "{{ is_state('switch.ventilation_high', 'on') }}"
+      turn_on:
+        service: script.toggle
+        data:
+          entity_id: script.ventilation_high
+      turn_off:
+        service: script.toggle
+        data:
+          entity_id: script.ventilation_high
+
 - platform: mqtt
   name: Heater
   command_topic: 'home/esp1_attic/cmd'
