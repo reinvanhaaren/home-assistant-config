@@ -34,8 +34,8 @@
 - [Installed HACS modules](#installed-hacs-modules)
   <!-- - [Plugins](#plugins)
   - [Themes](#themes) -->
-- [Wishlist](#wishlist)
 - [To-Do / Ideas](#to-do--ideas)
+- [Wishlist](#wishlist)
 - [Used resources](#used-resources)
 
 ## Welcome
