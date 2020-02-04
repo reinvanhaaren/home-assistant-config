@@ -153,9 +153,7 @@ We have a small christmas tree in the living room, just for fun. Why enjoy the l
 ### Plugins
 
 - [Custom Header][hacs-custom-header] - 1.3.2
-- [Fan Control Entity Row][hacs-fan-control-entity-row] - 1.2
 - [Mini Media Player][hacs-mini-media-player] - v1.6.0
-- [Upcoming Media Card][hacs-upcoming-media-card] - 0.4.0
 - [slider-entity-row][hacs-slider-entity-row] - 11
 
 ### Themes
