@@ -83,8 +83,8 @@
 
 - platform: mqtt
   name: Start washing machine
-  command_topic: 'home/esp1_bathroom/cmd'
-  state_topic: 'home/esp1_bathroom/relay_4/state'
+  command_topic: 'home/esp2_bathroom/cmd'
+  state_topic: 'home/esp2_bathroom/relay_1/state'
   availability_topic: 'home/esp1_bathroom/state'
   payload_on: 'Pulse,14,0,500'
   payload_off: 'GPIO,14,1'
