@@ -32,6 +32,7 @@ ios:                  !include includes/integrations/ios.yaml
 media_player:         !include includes/integrations/media_player.yaml
 mqtt:                 !include includes/integrations/mqtt.yaml
 # notify:               !include includes/integrations/notify.yaml
+speedtestdotnet:      !include includes/integrations/speedtestdotnet.yaml
 # telegram_bot:         !include includes/integrations/telegram_bot.yaml
 tplink:               !include includes/integrations/tplink.yaml
 tts:                  !include includes/integrations/tts.yaml
