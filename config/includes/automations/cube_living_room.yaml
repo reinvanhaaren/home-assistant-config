@@ -1,0 +1,18 @@
+---
+- alias: 'Cube: Living room: rotate_left '
+  initial_state: 'on'
+  trigger:
+    - entity_id: sensor.cube_living_room
+      platform: state
+      to: rotate_left
+  action:
+    - service: script.brightness_down
+- alias: 'Cube: Living room: rotate_right '
+  initial_state: 'on'
+  trigger:
+    - entity_id: sensor.cube_living_room
+      platform: state
+      to: rotate_right
+  action:
+    - data: {}
+      service: script.brightness_up
