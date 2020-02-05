@@ -23,6 +23,7 @@ views:
   - entities:
     - entity: scene.living_room_evening
     - entity: scene.living_room_shawarma
+    - entity: scene.room_rein_evening
     - entity: scene.room_rein_bright
     show_header_toggle: false
     title: Scenes
