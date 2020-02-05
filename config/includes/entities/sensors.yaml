@@ -24,6 +24,7 @@
   name: Temperature
   unit_of_measurement: '°C'
   state_topic: 'home/esp2_living_room/DHT22/temperature'
+  availability_topic: 'home/esp2_living_room/state'
 
 - platform: systemmonitor
   resources:
