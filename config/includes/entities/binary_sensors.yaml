@@ -65,3 +65,22 @@
           states('binary_sensor.tv_source_netflix') == 'off' and
           states('binary_sensor.tv_source_tunein') == 'off'
         }}
+    ventilation_usage_low:
+      friendly_name: Ventilation usage low
+      delay_on: '00:01:00'
+      delay_off: '00:01:00'
+      value_template: "{{ states('sensor.ventilation_usage')|int < 6 }}"
+    ventilation_usage_medium:
+      friendly_name: Ventilation usage medium
+      delay_on: '00:01:00'
+      delay_off: '00:01:00'
+      value_template: >
+        "{{
+          states('sensor.ventilation_usage')|int >= 6 and
+          states('sensor.ventilation_usage')|int < 15
+        }}"
+    ventilation_usage_high:
+      friendly_name: Ventilation usage high
+      delay_on: '00:01:00'
+      delay_off: '00:01:00'
+      value_template: "{{ states('sensor.ventilation_usage')|int >= 15 }}"
