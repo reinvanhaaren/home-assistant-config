@@ -1,5 +1,8 @@
 {
   "files.associations": {
     "*.yaml": "home-assistant"
-  }
+  },
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true
 }
