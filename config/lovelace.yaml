@@ -217,14 +217,20 @@ views:
 - badges: []
   cards:
   - cards:
+    - entity: media_player.spotify_rein_van_haaren
+      type: custom:mini-media-player
+    - entity: media_player.google_home
+      type: custom:mini-media-player
+    title: Audio
+    type: vertical-stack
+  - cards:
     - entity: media_player.chromecast
       type: custom:mini-media-player
     - entity: media_player.tv
       type: custom:mini-media-player
-    - entity: media_player.google_home
+    - entity: media_player.plex_lg_43uj670v_zd
       type: custom:mini-media-player
-    - entity: media_player.spotify_rein_van_haaren
-      type: custom:mini-media-player
+    title: Video
     type: vertical-stack
   icon: mdi:monitor-speaker
   path: media-players
