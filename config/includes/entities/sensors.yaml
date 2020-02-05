@@ -23,7 +23,7 @@
 - platform: mqtt
   name: Temperature
   unit_of_measurement: '°C'
-  state_topic: 'home/temperature'
+  state_topic: 'home/esp2_living_room/DHT22/temperature'
 
 - platform: systemmonitor
   resources:
