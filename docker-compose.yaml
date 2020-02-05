@@ -3,7 +3,7 @@ version: '3.2'
 services:
   homeassistant:
     container_name: homeassistant
-    image: homeassistant/home-assistant:stable
+    image: homeassistant/home-assistant
     restart: unless-stopped
     network_mode: host
     volumes:
