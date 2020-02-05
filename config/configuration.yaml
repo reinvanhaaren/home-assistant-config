@@ -29,7 +29,6 @@ zone:                 !include includes/entities/zones.yaml
 camera:               !include includes/integrations/camera.yaml
 homekit:              !include includes/integrations/homekit.yaml
 ios:                  !include includes/integrations/ios.yaml
-media_player:         !include includes/integrations/media_player.yaml
 mqtt:                 !include includes/integrations/mqtt.yaml
 # notify:               !include includes/integrations/notify.yaml
 speedtestdotnet:      !include includes/integrations/speedtestdotnet.yaml
