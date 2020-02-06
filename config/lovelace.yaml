@@ -240,6 +240,17 @@ views:
 - badges: []
   cards:
   - entities:
+    - entity: sensor.hilversum_den_haag
+    - entity: sensor.hilversum_oisterwijk
+    show_header_toggle: false
+    title: Departures
+    type: entities
+  icon: mdi:train
+  path: train
+  title: Train
+- badges: []
+  cards:
+  - entities:
     - entity: sensor.button_living_room_wall_battery
     - entity: sensor.button_hallway_front_battery
     - entity: sensor.button_room_rein_wall_battery
