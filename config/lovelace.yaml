@@ -230,6 +230,8 @@ views:
       type: custom:mini-media-player
     - entity: media_player.plex_lg_43uj670v_zd
       type: custom:mini-media-player
+    - entity: media_player.playstation_4
+      type: custom:mini-media-player
     title: Video
     type: vertical-stack
   icon: mdi:monitor-speaker
