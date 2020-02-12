@@ -31,7 +31,7 @@
   name: Bas ceiling
   command_topic: 'zigbee2mqtt/room_bas_ceiling/set'
   state_topic: 'zigbee2mqtt/room_bas_ceiling'
-  color_temp: false
+  color_temp: true
   brightness: true
   rgb: false
 
