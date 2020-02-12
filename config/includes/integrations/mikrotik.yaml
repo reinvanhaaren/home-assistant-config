@@ -1,6 +1,0 @@
----
-- name: Mikrotik
-  host: !secret mikrotik_host
-  username: !secret mikrotik_username
-  password: !secret mikrotik_password
-  detection_time: 180
