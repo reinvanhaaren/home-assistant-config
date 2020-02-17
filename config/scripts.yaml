@@ -110,3 +110,17 @@ ventilation_high:
     entity_id: switch.ventilation_medium
   - service: switch.turn_on
     entity_id: switch.ventilation_high
+away_mode_on:
+  alias: Away mode on
+  sequence:
+  - service: climate.set_preset_mode
+    entity_id: climate.heating
+    data:
+      preset_mode: away
+away_mode_off:
+  alias: Away mode off
+  sequence:
+  - service: climate.set_preset_mode
+    entity_id: climate.heating
+    data:
+      preset_mode: none

@@ -91,3 +91,11 @@
           states('binary_sensor.motion_hallway_front') == 'on' or
           states('binary_sensor.motion_hallway_back') == 'on'
         }}"
+    nobody_home:
+      friendly_name: Nobody home
+      value_template: >
+        "{{
+          states('person.bas_menting') != 'home' and
+          states('person.rein_van_haaren') != 'home' and
+          states('person.renske_van_der_zalm') != 'home'
+        }}"
