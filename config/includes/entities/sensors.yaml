@@ -21,10 +21,16 @@
         {{ as_timestamp(states('input_datetime.end_time_washing_machine')) | timestamp_custom('%d-%m-%Y %H:%M:%S') }}
 
 - platform: mqtt
-  name: Temperature
+  name: Temperature Living Room
   unit_of_measurement: '°C'
   state_topic: 'home/esp2_living_room/DHT22/temperature'
   availability_topic: 'home/esp2_living_room/state'
+
+- platform: mqtt
+  name: Temperature Room Rein
+  unit_of_measurement: '°C'
+  state_topic: 'home/esp3_room_rein/DHT22/temperature'
+  availability_topic: 'home/esp3_room_rein/state'
 
 - platform: systemmonitor
   resources:
