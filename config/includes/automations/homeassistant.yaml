@@ -1,0 +1,11 @@
+---
+- alias: 'Home Assistant: On start'
+  initial_state: 'on'
+  trigger:
+  - platform: homeassistant
+    event: start
+  action:
+    - service: timer.cancel
+      entity_id: timer.light_hallway
+    - service: timer.start
+      entity_id: timer.light_hallway

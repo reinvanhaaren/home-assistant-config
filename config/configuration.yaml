@@ -22,6 +22,7 @@ light:                !include includes/entities/lights.yaml
 sensor:               !include includes/entities/sensors.yaml
 shell_command:        !include includes/entities/shell_commands.yaml
 switch:               !include includes/entities/switches.yaml
+timer:                !include includes/entities/timers.yaml
 zone:                 !include includes/entities/zones.yaml
 
 # Integrations

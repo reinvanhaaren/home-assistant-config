@@ -1,0 +1,5 @@
+---
+light_hallway:
+  name: Light hallway
+  duration: '00:03:00'
+  icon: mdi:motion-sensor
