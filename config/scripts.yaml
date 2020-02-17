@@ -124,3 +124,22 @@ away_mode_off:
     entity_id: climate.heating
     data:
       preset_mode: none
+guest_mode_on:
+  alias: Guest mode on
+  sequence:
+  - service: script.turn_on
+    entity_id: script.check_guest_mode_timer
+guest_mode_off:
+  alias: Guest mode off
+  sequence:
+  - delay:
+      seconds: 1
+check_guest_mode_timer:
+  alias: Check Guest mode timer
+  sequence:
+  - condition: template
+    value_template: "{{ as_timestamp(now()) > as_timestamp(states('input_datetime.guest_mode_active_until')) }}"
+  - service: input_datetime.set_datetime
+    entity_id: input_datetime.guest_mode_active_until
+    data_template:
+      datetime: "{{ (as_timestamp(now()) + 12 * 3600) | timestamp_custom('%Y-%m-%d %H:%M:00') }}"

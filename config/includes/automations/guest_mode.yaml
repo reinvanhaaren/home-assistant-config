@@ -1,0 +1,49 @@
+---
+- alias: 'Guest mode: Turn on'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.guest_mode
+      to: 'on'
+  action:
+    - service: script.turn_on
+      entity_id: script.guest_mode_on
+    - service: script.turn_on
+      entity_id: script.away_mode_off
+    - delay:
+        seconds: 1
+    - service: notify.mobile_app_iphone_rein
+      data_template:
+        message: "Guest mode enabled until {{ as_timestamp(states('input_datetime.guest_mode_until')) | timestamp_custom('%d-%m-%Y %H:%M') }}"
+- alias: 'Guest mode: Turn off'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.guest_mode
+      to: 'off'
+  action:
+    - service: script.turn_on
+      entity_id: script.guest_mode_off
+    - service: notify.mobile_app_iphone_rein
+      data:
+        message: 'Guest mode disabled'
+    - condition: state
+      entity_id: binary_sensor.nobody_home
+      state: 'on'
+    - service: script.turn_on
+      entity_id: script.away_mode_on
+    - service: notify.mobile_app_iphone_rein
+      data:
+        message: 'Away mode is set to: on'
+- alias: 'Guest mode: Turn off after timer expires'
+  initial_state: 'on'
+  trigger:
+    - platform: template
+      value_template: "{{ as_timestamp(states.sensor.time.last_changed) > as_timestamp(states.input_datetime.guest_mode_active_until.state) }}"
+  condition:
+    - condition: state
+      entity_id: input_boolean.guest_mode
+      state: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.guest_mode

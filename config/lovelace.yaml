@@ -43,6 +43,7 @@ views:
   cards:
   - entities:
     - entity: input_boolean.guest_mode
+    - entity: input_datetime.guest_mode_active_until
     show_header_toggle: false
     title: General
     type: entities

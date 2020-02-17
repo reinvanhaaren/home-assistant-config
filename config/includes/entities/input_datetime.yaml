@@ -4,3 +4,8 @@ end_time_washing_machine:
   has_date: true
   has_time: true
   icon: mdi:clock-digital
+guest_mode_active_until:
+  name: Guest mode until
+  has_date: true
+  has_time: true
+  icon: mdi:clock-digital
