@@ -56,13 +56,3 @@
   name: Available HASS version
   image: default
   source: docker
-
-- platform: nederlandse_spoorwegen
-  api_key: !secret ns_api_key
-  routes:
-    - name: Hilversum - Den Haag
-      from: Hvs
-      to: Gvc
-    - name: Hilversum - Oisterwijk
-      from: Hvs
-      to: Ot
