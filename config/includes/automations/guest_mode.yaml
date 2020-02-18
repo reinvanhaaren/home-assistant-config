@@ -14,7 +14,7 @@
         seconds: 1
     - service: notify.mobile_app_iphone_rein
       data_template:
-        message: "Guest mode enabled until {{ as_timestamp(states('input_datetime.guest_mode_until')) | timestamp_custom('%d-%m-%Y %H:%M') }}"
+        message: "Guest mode enabled until {{ as_timestamp(states('input_datetime.guest_mode_active_until')) | timestamp_custom('%d-%m-%Y %H:%M') }}"
 - alias: 'Guest mode: Turn off'
   initial_state: 'on'
   trigger:
