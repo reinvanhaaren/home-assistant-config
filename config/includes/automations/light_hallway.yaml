@@ -1,5 +1,5 @@
 ---
-- alias: 'Light Hallway: Start timer and turn light on'
+- alias: 'Light Hallway: Reset and start timer'
   initial_state: 'on'
   trigger:
     - platform: state
