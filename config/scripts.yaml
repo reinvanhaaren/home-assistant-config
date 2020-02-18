@@ -143,3 +143,12 @@ check_guest_mode_timer:
     entity_id: input_datetime.guest_mode_active_until
     data_template:
       datetime: "{{ (as_timestamp(now()) + 12 * 3600) | timestamp_custom('%Y-%m-%d %H:%M:00') }}"
+turn_off_living_room:
+  alias: Turn off Living Room
+  sequence:
+  - service: light.turn_off
+    entity_id: light.living_room
+  - service: media_player.turn_off
+    entity_id: media_player.tv
+  - service: media_player.turn_off
+    entity_id: media_player.google_home
