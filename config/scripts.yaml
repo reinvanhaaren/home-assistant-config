@@ -139,6 +139,10 @@ check_guest_mode_timer:
   sequence:
   - condition: template
     value_template: "{{ as_timestamp(now()) > as_timestamp(states('input_datetime.guest_mode_active_until')) }}"
+  - service: script.reset_guest_mode_timer
+reset_guest_mode_timer:
+  alias: Reset Guest mode timer
+  sequence:
   - service: input_datetime.set_datetime
     entity_id: input_datetime.guest_mode_active_until
     data_template:
