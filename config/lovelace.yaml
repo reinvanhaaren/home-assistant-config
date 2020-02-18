@@ -10,32 +10,262 @@ resources:
   url: /community_plugin/mini-media-player/mini-media-player-bundle.js
 - type: module
   url: /community_plugin/lovelace-slider-entity-row/slider-entity-row.js
+- type: module
+  url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
+- type: js
+  url: /community_plugin/vertical-stack-in-card/vertical-stack-in-card.js
+- type: module
+  url: /community_plugin/lovelace-fold-entity-row/fold-entity-row.js
+- type: module
+  url: /community_plugin/button-card/button-card.js
 state-icon-active-color: '#0F0'
 title: Home Assistant
 views:
 - badges:
   - entity: person.rein_van_haaren
   - entity: person.bas_menting
-  - entity: input_boolean.guest_mode
-  - entity: sun.sun
   cards:
-  - entities:
-    - entity: scene.living_room_evening
-    - entity: scene.living_room_shawarma
-    - entity: scene.room_rein_evening
-    - entity: scene.room_rein_bright
-    show_header_toggle: false
-    title: Scenes
-    type: entities
-  - entity: weather.buienradar
-    name: Buienradar
-    type: weather-forecast
-  - aspect_ratio: 0%
-    camera_image: camera.buienradar
-    entities: []
-    image: https://www.home-assistant.io/images/merchandise/shirt-frontpage.png
-    title: Buienradar
-    type: picture-glance
+  - cards:
+    - entities:
+      - entities:
+        - entity: light.couch
+          hide_state: true
+          min: 1
+          step: 1
+          toggle: true
+          type: custom:slider-entity-row
+        - entity: light.living_room_ridge
+          hide_state: true
+          min: 1
+          step: 1
+          toggle: true
+          type: custom:slider-entity-row
+        - entity: light.living_room_turtle_chair
+          hide_state: true
+          min: 1
+          step: 1
+          toggle: true
+          type: custom:slider-entity-row
+        - entity: light.tv
+          hide_state: true
+          min: 1
+          step: 1
+          toggle: true
+          type: custom:slider-entity-row
+        - entity: light.corner
+          hide_state: true
+          min: 1
+          step: 1
+          toggle: true
+          type: custom:slider-entity-row
+        - entity: light.kitchen
+          hide_state: true
+          min: 1
+          step: 1
+          toggle: true
+          type: custom:slider-entity-row
+        - entity: light.christmas_tree
+        head:
+          entity: light.living_room
+          icon: mdi:sofa
+          min: 0
+          step: 1
+          type: custom:slider-entity-row
+        type: custom:fold-entity-row
+      - entities:
+        - entity: light.hallway_1
+          hide_state: true
+          min: 1
+          name: Hallway Front 1
+          step: 1
+          toggle: true
+          type: custom:slider-entity-row
+        - entity: light.hallway_2
+          hide_state: true
+          min: 1
+          name: Hallway Front 2
+          step: 1
+          toggle: true
+          type: custom:slider-entity-row
+        - entity: light.hallway_3
+          hide_state: true
+          min: 1
+          name: Hallway Back 1
+          step: 1
+          toggle: true
+          type: custom:slider-entity-row
+        - entity: light.hallway_4
+          hide_state: true
+          min: 1
+          name: Hallway Back 2
+          step: 1
+          toggle: true
+          type: custom:slider-entity-row
+        head:
+          entity: light.hallway
+          icon: mdi:door-closed
+          min: 0
+          step: 1
+          type: custom:slider-entity-row
+        type: custom:fold-entity-row
+      - entities:
+        - entity: light.room_rein_1
+          hide_state: true
+          min: 1
+          name: Ceiling Left
+          step: 1
+          toggle: true
+          type: custom:slider-entity-row
+        - entity: light.room_rein_2
+          hide_state: true
+          min: 1
+          name: Ceiling Right
+          step: 1
+          toggle: true
+          type: custom:slider-entity-row
+        - entity: light.room_rein_bed
+          hide_state: true
+          min: 1
+          name: Bed
+          step: 1
+          toggle: true
+          type: custom:slider-entity-row
+        head:
+          entity: light.room_rein
+          icon: mdi:bed-empty
+          min: 0
+          step: 1
+          type: custom:slider-entity-row
+        type: custom:fold-entity-row
+      - entities:
+        - entity: light.room_bas_ceiling_1
+          hide_state: true
+          min: 1
+          name: Ceiling Left
+          step: 1
+          toggle: true
+          type: custom:slider-entity-row
+        - entity: light.room_bas_ceiling_2
+          hide_state: true
+          min: 1
+          name: Ceiling Right
+          step: 1
+          toggle: true
+          type: custom:slider-entity-row
+        - entity: light.room_bas_bed
+          hide_state: true
+          min: 1
+          name: Bed
+          step: 1
+          toggle: true
+          type: custom:slider-entity-row
+        head:
+          entity: light.room_bas
+          icon: mdi:bed-empty
+          min: 0
+          step: 1
+          type: custom:slider-entity-row
+        type: custom:fold-entity-row
+      show_header_toggle: false
+      title: Lights
+      type: entities
+    - cards:
+      - color: auto
+        entity: input_boolean.guest_mode
+        icon: "[[[\n  if (entity.state !== 'on')\n    return 'mdi:bag-carry-on-off';\n\
+          \  else {\n    return 'mdi:bag-checked';\n  }\n]]]\n"
+        name: "[[[\n  if (entity.state !== 'on')\n    return 'Activate Guest Mode';\n\
+          \  else {\n    return `Guest Mode active`\n  }\n]]]\n"
+        styles:
+          card:
+          - font-size: 12px
+          - font-weight: bold
+          - height: 70px
+        type: custom:button-card
+      - color: auto
+        entity: input_boolean.dummy
+        icon: mdi:account-clock
+        name: Reset Guest Mode timer
+        styles:
+          card:
+          - font-size: 12px
+          - font-weight: bold
+          - height: 70px
+        tap_action:
+          action: call-service
+          haptic: success
+          service: script.reset_guest_mode_timer
+        type: custom:button-card
+      type: horizontal-stack
+    - entities:
+      - entity: input_datetime.guest_mode_active_until
+      type: entities
+    - entity: weather.buienradar
+      name: Buienradar
+      type: weather-forecast
+    type: vertical-stack
+  - cards:
+    - background: /local/images/card_background_tv.png
+      entity: media_player.tv
+      hide:
+        controls: true
+        power: false
+        source: false
+        volume: true
+      type: custom:mini-media-player
+    - background: /local/images/card_background_chromecast.png
+      entity: media_player.chromecast
+      hide:
+        power: false
+        source: false
+        volume: true
+      icon: mdi:spotify
+      type: custom:mini-media-player
+    - artwork: cover
+      entity: media_player.spotify_rein_van_haaren
+      hide:
+        power: true
+        source: false
+        volume: true
+      icon: mdi:spotify
+      type: custom:mini-media-player
+    type: vertical-stack
+  - cards:
+    - entity: climate.heating
+      type: thermostat
+    - cards:
+      - entities:
+        - entity: sensor.temperature_living_room
+          index: 0
+        font_size: 80
+        group: false
+        hour24: true
+        line_width: 2
+        points_per_hour: 1
+        show:
+          extrema: false
+          fill: fade
+          labels: true
+          name: true
+          state: true
+        type: custom:mini-graph-card
+      - entities:
+        - entity: sensor.temperature_room_rein
+          index: 0
+        font_size: 80
+        group: false
+        hour24: true
+        line_width: 2
+        points_per_hour: 1
+        show:
+          extrema: false
+          fill: fade
+          labels: true
+          name: true
+          state: true
+        type: custom:mini-graph-card
+      type: custom:vertical-stack-in-card
+    type: vertical-stack
   icon: mdi:home
   path: general
   title: General
@@ -298,6 +528,11 @@ views:
     - entity: timer.light_hallway
     show_header_toggle: false
     title: Motion
+    type: entities
+  - entities:
+    - entity: binary_sensor.nobody_home
+    show_header_toggle: false
+    title: Overig
     type: entities
   icon: mdi:test-tube
   path: test
