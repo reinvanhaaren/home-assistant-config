@@ -155,6 +155,10 @@ We have a small christmas tree in the living room, just for fun. Why enjoy the l
 - [Custom Header][hacs-custom-header] - 1.3.2
 - [Mini Media Player][hacs-mini-media-player] - v1.6.0
 - [slider-entity-row][hacs-slider-entity-row] - 11
+- [mini-graph-card][hacs-mini-graph-card] - v0.9.2
+- [vertical-stack-in-card][hacs-vertical-stack-in-card] - v0.2.1
+- [fold-entity-row][hacs-fold-entity-row] - 13
+- [button-card][hacs-button-card] - 3.1.1
 
 ### Themes
 
@@ -219,5 +223,9 @@ I would love to share new ideas! Please contact me by e-mail or open a issue in 
 [hacs-mini-media-player]: https://github.com/kalkih/mini-media-player
 [hacs-upcoming-media-card]: https://github.com/custom-cards/upcoming-media-card
 [hacs-slider-entity-row]: https://github.com/thomasloven/lovelace-slider-entity-row
+[hacs-mini-graph-card]: https://github.com/kalkih/mini-graph-card
+[hacs-vertical-stack-in-card]: https://github.com/ofekashery/vertical-stack-in-card
+[hacs-fold-entity-row]: https://github.com/thomasloven/lovelace-fold-entity-row
+[hacs-button-card]: https://github.com/custom-cards/button-card
 [hacs-google-dark-theme]: https://github.com/JuanMTech/google_dark_theme
 [hacs-ios-dark-mode-theme]: https://github.com/basnijholt/lovelace-ios-dark-mode-theme
