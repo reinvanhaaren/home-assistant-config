@@ -1,0 +1,22 @@
+---
+- alias: 'Light: Storage room: on'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_storage_room
+      to: 'on'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.storage_room
+        brightness: 255
+- alias: 'Light: Storage room: off'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_storage_room
+      to: 'off'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.storage_room
