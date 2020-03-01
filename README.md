@@ -155,9 +155,9 @@ We have a small christmas tree in the living room, just for fun. Why enjoy the l
 - [Custom Header][hacs-custom-header] - 1.3.2
 - [Mini Media Player][hacs-mini-media-player] - v1.6.0
 - [slider-entity-row][hacs-slider-entity-row] - 11
-- [mini-graph-card][hacs-mini-graph-card] - v0.9.2
+- [mini-graph-card][hacs-mini-graph-card] - v0.9.3
 - [vertical-stack-in-card][hacs-vertical-stack-in-card] - v0.2.1
-- [fold-entity-row][hacs-fold-entity-row] - 13
+- [fold-entity-row][hacs-fold-entity-row] - 14
 - [button-card][hacs-button-card] - 3.1.1
 
 ### Themes
@@ -211,8 +211,8 @@ I would love to share new ideas! Please contact me by e-mail or open a issue in 
 [forks-badge]: https://badgen.net/github/forks/reinvanhaaren/home-assistant-config
 [hass-version]: https://www.home-assistant.io/blog/2020/02/26/release-106
 [hass-version-badge]: https://img.shields.io/badge/Home%20Assistant-0.106.2-brightgreen.svg
-[hacs-version]: https://github.com/hacs/integration/releases/tag/0.21.5
-[hacs-version-badge]: https://img.shields.io/badge/Home%20Assistant%20Community%20Store-0.21.5-brightgreen.svg
+[hacs-version]: https://github.com/hacs/integration/releases/tag/0.22.0
+[hacs-version-badge]: https://img.shields.io/badge/Home%20Assistant%20Community%20Store-0.22.0-brightgreen.svg
 [buymeacoffee]: https://www.buymeacoffee.com/reinvanhaaren
 [buymeacoffee-badge]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
 [flag-nl]: https://raw.githubusercontent.com/oxguy3/flags/master/mini/nl.png
