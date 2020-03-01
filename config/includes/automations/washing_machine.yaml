@@ -29,3 +29,14 @@
     - service: notify.mobile_app_iphone_rein
       data:
         message: 'Washing machine started! 👚👕'
+- alias: 'Washing machine: Reset and start remaining timer'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.washing_machine
+    to: 'on'
+  action:
+    - service: timer.cancel
+      entity_id: timer.washing_machine_remaining
+    - service: timer.start
+      entity_id: timer.washing_machine_remaining
