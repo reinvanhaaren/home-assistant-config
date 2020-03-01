@@ -76,35 +76,35 @@
 
 - platform: template
   lights:
-    tv:
-      friendly_name: 'TV'
-      level_template: >
-        {% set n = states.light.living_room_tv.attributes.brightness|int %}
-        {% if n == 0 %}
-        0
-        {% else %}
-        {% set b = ((n-29)/(255 - 29 - (255 - 255)))*255 %}
-        {% if b < 1 %}
-        0
-        {% else %}
-        {{ b|int }}
-        {% endif %}
-        {% endif %}
-      value_template: '{{ states.light.living_room_tv.attributes.brightness|int > 26 }}'
-      turn_on:
-        service: light.turn_on
-        data:
-          entity_id: light.living_room_tv
-      turn_off:
-        service: light.turn_off
-        data:
-          entity_id: light.living_room_tv
-      set_level:
-        service: script.set_brightness
-        data_template:
-          entity_id: light.living_room_tv
-          brightness: '{{ brightness }}'
-          min_brightness: 29
+    # tv:
+    #   friendly_name: 'TV'
+    #   level_template: >
+    #     {% set n = states.light.living_room_tv.attributes.brightness|int %}
+    #     {% if n == 0 %}
+    #     0
+    #     {% else %}
+    #     {% set b = ((n-29)/(255 - 29 - (255 - 255)))*255 %}
+    #     {% if b < 1 %}
+    #     0
+    #     {% else %}
+    #     {{ b|int }}
+    #     {% endif %}
+    #     {% endif %}
+    #   value_template: '{{ states.light.living_room_tv.attributes.brightness|int > 26 }}'
+    #   turn_on:
+    #     service: light.turn_on
+    #     data:
+    #       entity_id: light.living_room_tv
+    #   turn_off:
+    #     service: light.turn_off
+    #     data:
+    #       entity_id: light.living_room_tv
+    #   set_level:
+    #     service: script.set_brightness
+    #     data_template:
+    #       entity_id: light.living_room_tv
+    #       brightness: '{{ brightness }}'
+    #       min_brightness: 29
     corner:
       friendly_name: 'Corner'
       level_template: >

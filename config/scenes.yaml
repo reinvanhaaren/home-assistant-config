@@ -45,11 +45,25 @@
       min_mireds: 153
       state: 'on'
       supported_features: 43
-    light.tv:
-      brightness: 0
+    light.living_room_tv:
+      brightness: 127
+      color:
+        x: 0.217
+        y: 0.077
       friendly_name: TV
+      hs_color:
+      - 270.824
+      - 100
+      rgb_color:
+      - 131
+      - 0
+      - 255
       state: 'on'
-      supported_features: 1
+      supported_features: 57
+      update_available: true
+      xy_color:
+      - 0.222
+      - 0.079
 - id: '1579726887557'
   name: Living Room Shawarma
   entities:
@@ -77,7 +91,7 @@
       state: 'on'
       supported_features: 41
     light.living_room_couch_3:
-      brightness: 255
+      brightness: 1
       friendly_name: Couch 3
       state: 'on'
       supported_features: 41
@@ -97,11 +111,25 @@
       min_mireds: 153
       state: 'on'
       supported_features: 43
-    light.tv:
-      brightness: 0
+    light.living_room_tv:
+      brightness: 255
+      color:
+        x: 0.323
+        y: 0.329
       friendly_name: TV
+      hs_color:
+      - 0
+      - 0.392
+      rgb_color:
+      - 255
+      - 254
+      - 254
       state: 'on'
-      supported_features: 1
+      supported_features: 57
+      update_available: true
+      xy_color:
+      - 0.324
+      - 0.329
 - id: '1579734722178'
   name: Room Rein Evening
   entities:
