@@ -46,7 +46,7 @@ views:
           step: 1
           toggle: true
           type: custom:slider-entity-row
-        - entity: light.tv
+        - entity: light.living_room_tv
           hide_state: true
           min: 1
           step: 1
@@ -229,6 +229,17 @@ views:
         volume: true
       icon: mdi:spotify
       type: custom:mini-media-player
+    - entities:
+      - entity: binary_sensor.washing_machine
+        name: State
+      - entity: sensor.washing_machine_usage
+        name: Usage
+      - entity: timer.washing_machine_remaining
+        icon: mdi:clock-check
+        name: Estimated time remaining
+      show_header_toggle: false
+      title: Washing machine
+      type: entities
     type: vertical-stack
   - cards:
     - entity: climate.heating
@@ -531,6 +542,9 @@ views:
     type: entities
   - entities:
     - entity: binary_sensor.nobody_home
+    - entity: light.extractor_hood
+    - entity: light.living_room_tv
+    - entity: light.storage_room
     show_header_toggle: false
     title: Overig
     type: entities

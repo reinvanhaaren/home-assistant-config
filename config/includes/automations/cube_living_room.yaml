@@ -16,7 +16,7 @@
   action:
     - data: {}
       service: script.brightness_up
-- alias: 'Cube: Living room: rotate_right'
+- alias: 'Cube: Living room: shake'
   initial_state: 'on'
   trigger:
     - entity_id: sensor.cube_living_room
