@@ -44,11 +44,14 @@
   entities:
     - light.living_room_ridge
     - light.living_room_turtle_chair
+    - light.living_room_tv
     - light.couch
-    - light.kitchen_cabinets
+    - light.corner
+    - light.kitchen
     - light.hallway
     - light.room_rein
     - light.room_bas
+    - light.christmas_tree
 
 - platform: group
   name: Living room
@@ -56,10 +59,17 @@
     - light.couch
     - light.living_room_ridge
     - light.living_room_turtle_chair
-    - light.tv
+    - light.living_room_tv
     - light.corner
     - light.kitchen
+    - light.kitchen_extractor_hood
     - light.christmas_tree
+
+- platform: group
+  name: Kitchen
+  entities:
+    - light.kitchen_cabinets
+    - light.kitchen_extractor_hood
 
 - platform: group
   name: Room Rein
