@@ -1,9 +1,9 @@
 - id: '1579726678052'
   name: Living Room Evening
   entities:
-    light.kitchen_cabinets:
+    light.kitchen_cabinets_map:
       brightness: 1
-      friendly_name: Kitchen
+      friendly_name: Kitchen cabinets
       state: 'on'
       supported_features: 41
     light.living_room_corner:
@@ -67,9 +67,9 @@
 - id: '1579726887557'
   name: Living Room Shawarma
   entities:
-    light.kitchen_cabinets:
-      brightness: 235
-      friendly_name: Kitchen
+    light.kitchen_cabinets_map:
+      brightness: 255
+      friendly_name: Kitchen cabinets
       state: 'on'
       supported_features: 41
     light.living_room_corner:

@@ -47,7 +47,7 @@
     - light.living_room_tv
     - light.couch
     - light.corner
-    - light.kitchen
+    - light.kitchen_map
     - light.hallway
     - light.room_rein
     - light.room_bas
@@ -59,16 +59,13 @@
     - light.couch
     - light.living_room_ridge
     - light.living_room_turtle_chair
-    - light.living_room_tv
     - light.corner
-    - light.kitchen
-    - light.kitchen_extractor_hood
     - light.christmas_tree
 
 - platform: group
   name: Kitchen
   entities:
-    - light.kitchen_cabinets
+    - light.kitchen_cabinets_map
     - light.kitchen_extractor_hood
 
 - platform: group
@@ -144,7 +141,7 @@
           entity_id: light.living_room_corner
           brightness: '{{ brightness }}'
           min_brightness: 29
-    kitchen:
+    kitchen_cabinets_map:
       friendly_name: 'Kitchen'
       level_template: >
         {% set n = states.light.kitchen_cabinets.attributes.brightness|int %}

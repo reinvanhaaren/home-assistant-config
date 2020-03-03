@@ -7,7 +7,7 @@ filter:
     - light.tv
     - light.couch
     - light.corner
-    - light.kitchen
+    - light.kitchen_map
     - light.christmas_tree
     - light.rein_ceiling
     - light.room_rein_bed

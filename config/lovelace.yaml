@@ -58,7 +58,7 @@ views:
           step: 1
           toggle: true
           type: custom:slider-entity-row
-        - entity: light.kitchen
+        - entity: light.kitchen_cabinets_map
           hide_state: true
           min: 1
           step: 1
@@ -325,7 +325,7 @@ views:
       step: 1
       toggle: true
       type: custom:slider-entity-row
-    - entity: light.kitchen
+    - entity: light.kitchen_cabinets_map
       hide_state: true
       min: 1
       step: 1

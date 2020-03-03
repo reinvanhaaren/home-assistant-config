@@ -1,0 +1,11 @@
+---
+- alias: 'Button: Kitchen wall: on'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: sensor.button_kitchen_wall
+      to: 'on'
+  action:
+    - service: script.turn_on
+      data:
+        entity_id: script.lights_kitchen_on
