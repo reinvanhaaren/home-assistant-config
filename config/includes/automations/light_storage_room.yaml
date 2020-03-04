@@ -1,10 +1,23 @@
 ---
+- alias: 'Light: Storage room: Restart timer'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: light.storage_room
+      to: 'on'
+  action:
+    - service: script.turn_on
+      entity_id: script.restart_light_storage_room_timer
 - alias: 'Light: Storage room: on'
   initial_state: 'on'
   trigger:
     - platform: state
       entity_id: binary_sensor.door_storage_room
       to: 'on'
+  condition:
+    - condition: state
+      entity_id: light.storage_room
+      state: 'off'
   action:
     - service: light.turn_on
       data:
@@ -16,6 +29,14 @@
     - platform: state
       entity_id: binary_sensor.door_storage_room
       to: 'off'
+    - platform: event
+      event_type: timer.finished
+      event_data:
+        entity_id: timer.light_storage_room
+  condition:
+    - condition: state
+      entity_id: light.storage_room
+      state: 'on'
   action:
     - service: light.turn_off
       data:

@@ -3,6 +3,10 @@ light_hallway:
   name: Light hallway
   duration: '00:03:00'
   icon: mdi:motion-sensor
+light_storage_room:
+  name: Light storage room
+  duration: '01:00:00'
+  icon: mdi:lightbulb-off
 washing_machine_remaining:
   name: Washing machine remaining
   duration: '01:45:00'
