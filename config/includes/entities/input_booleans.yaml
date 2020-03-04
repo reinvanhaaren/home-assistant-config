@@ -10,3 +10,6 @@ enable_washing_machine_schedule:
 dummy:
   name: Dummy input boolean
   initial: off
+test_boolean:
+  name: Test Boolean
+  initial: off
