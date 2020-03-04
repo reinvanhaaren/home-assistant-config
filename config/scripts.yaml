@@ -84,6 +84,29 @@ set_brightness:
         {% set t = (((n/255)*(255 - min - (255 - max))) + min)|int %}
         {{ t }}
         {% endif %}
+light_hallway_high:
+  alias: Light Hallway high
+  sequence:
+  - service: light.turn_on
+    entity_id: light.hallway
+    data:
+      brightness: 150
+light_hallway_low:
+  alias: Light Hallway low
+  sequence:
+  - service: light.turn_on
+    entity_id: light.hallway
+    data:
+      brightness: 1
+light_hallway_night:
+  alias: Light Hallway night
+  sequence:
+  - service: light.turn_off
+    entity_id: light.hallway_front
+  - service: light.turn_on
+    entity_id: light.hallway_back
+    data:
+      brightness: 1
 ventilation_set_speed:
   alias: Ventilation set speed
   sequence:
@@ -148,6 +171,13 @@ reset_guest_mode_timer:
     entity_id: input_datetime.guest_mode_active_until
     data_template:
       datetime: "{{ (as_timestamp(now()) + 12 * 3600) | timestamp_custom('%Y-%m-%d %H:%M:00') }}"
+restart_light_hallway_timer:
+  alias: Restart light Hallway timer
+  sequence:
+  - service: timer.cancel
+    entity_id: timer.light_hallway
+  - service: timer.start
+    entity_id: timer.light_hallway
 turn_off_living_room:
   alias: Turn off Living Room
   sequence:

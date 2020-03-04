@@ -19,6 +19,24 @@
 
 - platform: mqtt
   schema: json
+  name: Hallway Front
+  command_topic: 'zigbee2mqtt/hallway_front/set'
+  state_topic: 'zigbee2mqtt/hallway_front'
+  color_temp: false
+  brightness: true
+  rgb: false
+
+- platform: mqtt
+  schema: json
+  name: Hallway Back
+  command_topic: 'zigbee2mqtt/hallway_back/set'
+  state_topic: 'zigbee2mqtt/hallway_back'
+  color_temp: false
+  brightness: true
+  rgb: false
+
+- platform: mqtt
+  schema: json
   name: Rein ceiling
   command_topic: 'zigbee2mqtt/room_rein_ceiling/set'
   state_topic: 'zigbee2mqtt/room_rein_ceiling'
