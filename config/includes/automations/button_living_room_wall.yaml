@@ -8,7 +8,7 @@
   action:
     - service: light.toggle
       data:
-        entity_id: light.living_room
+        entity_id: light.living_room_and_kitchen_cabinets
 - alias: 'Button: Living room wall: toggle_hold'
   initial_state: 'on'
   trigger:
@@ -18,7 +18,7 @@
   action:
     - service: light.turn_on
       data:
-        entity_id: light.living_room
+        entity_id: light.living_room_and_kitchen_cabinets
 - alias: 'Button: Living room wall: brightness_up_click'
   initial_state: 'on'
   trigger:
