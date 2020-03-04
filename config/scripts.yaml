@@ -65,6 +65,7 @@ set_brightness:
   - service: light.turn_on
     data_template:
       entity_id: '{{ entity_id }}'
+      transition: 1
       brightness: >
         {% set n = brightness|float %}
         {% if n == 0 %}
