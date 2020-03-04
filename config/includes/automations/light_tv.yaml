@@ -9,6 +9,7 @@
     - service: light.turn_on
       entity_id: light.living_room_tv
       data:
+        brightness: 130
         rgb_color: [0, 255, 0]
         transition: 2
 - alias: 'Light TV: TuneIn'
@@ -21,6 +22,7 @@
     - service: light.turn_on
       entity_id: light.living_room_tv
       data:
+        brightness: 130
         rgb_color: [0, 255, 0]
         transition: 2
 - alias: 'Light TV: YouTube'
@@ -33,6 +35,7 @@
     - service: light.turn_on
       entity_id: light.living_room_tv
       data:
+        brightness: 180
         rgb_color: [255, 0, 0]
         transition: 2
 - alias: 'Light TV: Netflix'
@@ -45,17 +48,61 @@
     - service: light.turn_on
       entity_id: light.living_room_tv
       data:
+        brightness: 180
         rgb_color: [255, 0, 0]
         transition: 2
-- alias: 'Light TV: Off'
+- alias: 'Light TV: General'
   initial_state: 'on'
   trigger:
     - platform: state
       entity_id: binary_sensor.tv_source_off
       to: 'on'
+    - platform: state
+      entity_id: media_player.tv
+      to: 'on'
+    - platform: state
+      entity_id: media_player.tv
+      to: 'off'
+    - platform: state
+      entity_id: light.living_room
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: light.living_room
+      state:  'on'
+    - condition: state
+      entity_id: binary_sensor.tv_source_off
+      state:  'on'
   action:
     - service: light.turn_on
       entity_id: light.living_room_tv
       data:
+        brightness: 130
         rgb_color: [175, 0, 255]
         transition: 2
+- alias: 'Light TV: TV Off'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: media_player.tv
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: light.living_room
+      state:  'off'
+  action:
+    - service: light.turn_off
+      entity_id: light.living_room_tv
+- alias: 'Light TV: Living Room Off'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: light.living_room
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: media_player.tv
+      state:  'off'
+  action:
+    - service: light.turn_off
+      entity_id: light.living_room_tv
