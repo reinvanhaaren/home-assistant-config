@@ -188,8 +188,14 @@ restart_light_storage_room_timer:
 turn_off_living_room:
   alias: Turn off Living Room
   sequence:
+  - service: script.turn_on
+    entity_id: script.turn_on_light_hallway
+  - service: script.turn_on
+    entity_id: script.restart_light_hallway_timer
   - service: light.turn_off
     entity_id: light.living_room
+  - service: light.turn_off
+    entity_id: light.kitchen
   - service: media_player.turn_off
     entity_id: media_player.tv
   - service: media_player.turn_off
