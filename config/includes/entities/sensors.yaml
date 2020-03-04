@@ -19,6 +19,10 @@
       friendly_name: End time washing machine
       value_template: >
         {{ as_timestamp(states('input_datetime.end_time_washing_machine')) | timestamp_custom('%d-%m-%Y %H:%M:%S') }}
+    light_intensity_hallway:
+      friendly_name: Light intensity hallway
+      value_template: >
+        {{ states.binary_sensor.motion_hallway_front.attributes.illuminance | int }}
 
 - platform: mqtt
   name: Temperature Living Room
