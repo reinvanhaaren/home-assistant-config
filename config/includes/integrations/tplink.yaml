@@ -1,2 +1,5 @@
 ---
-discovery: true
+discovery: false
+switch:
+  - host: !secret tp_link_washing_machine_ip
+  - host: !secret tp_link_ventilation_ip
