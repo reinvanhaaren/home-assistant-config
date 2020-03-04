@@ -3,12 +3,12 @@
   entities:
     light.kitchen_cabinets_map:
       brightness: 1
-      friendly_name: Kitchen cabinets
+      friendly_name: Kitchen
       state: 'on'
-      supported_features: 41
+      supported_features: 1
     light.living_room_corner:
-      brightness: 36
-      color_temp: 303
+      brightness: 27
+      color_temp: 494
       friendly_name: Corner
       max_mireds: 1000
       min_mireds: 100
@@ -19,16 +19,19 @@
       friendly_name: Couch 1
       state: 'on'
       supported_features: 41
+      update_available: false
     light.living_room_couch_2:
       brightness: 1
       friendly_name: Couch 2
       state: 'on'
       supported_features: 41
+      update_available: false
     light.living_room_couch_3:
       brightness: 1
       friendly_name: Couch 3
       state: 'on'
       supported_features: 41
+      update_available: false
     light.living_room_ridge:
       brightness: 1
       color_temp: 444
@@ -37,6 +40,7 @@
       min_mireds: 153
       state: 'on'
       supported_features: 43
+      update_available: true
     light.living_room_turtle_chair:
       brightness: 1
       color_temp: 451
@@ -45,35 +49,42 @@
       min_mireds: 153
       state: 'on'
       supported_features: 43
+      update_available: true
     light.living_room_tv:
-      brightness: 127
+      brightness: 126
       color:
-        x: 0.217
-        y: 0.077
+        x: 0.301
+        y: 0.116
       friendly_name: TV
       hs_color:
-      - 270.824
-      - 100
+      - 285
+      - 98.824
       rgb_color:
-      - 131
-      - 0
+      - 191
+      - 2
       - 255
       state: 'on'
       supported_features: 57
-      update_available: true
+      update_available: false
       xy_color:
-      - 0.222
-      - 0.079
+      - 0.301
+      - 0.116
 - id: '1579726887557'
   name: Living Room Shawarma
   entities:
     light.kitchen_cabinets_map:
       brightness: 255
-      friendly_name: Kitchen cabinets
+      friendly_name: Kitchen
+      state: 'on'
+      supported_features: 1
+    light.kitchen_extractor_hood:
+      brightness: 255
+      friendly_name: Extractor hood
       state: 'on'
       supported_features: 41
+      update_available: false
     light.living_room_corner:
-      brightness: 250
+      brightness: 255
       color_temp: 100
       friendly_name: Corner
       max_mireds: 1000
@@ -85,16 +96,19 @@
       friendly_name: Couch 1
       state: 'on'
       supported_features: 41
+      update_available: false
     light.living_room_couch_2:
       brightness: 255
       friendly_name: Couch 2
       state: 'on'
       supported_features: 41
+      update_available: false
     light.living_room_couch_3:
       brightness: 1
       friendly_name: Couch 3
       state: 'on'
       supported_features: 41
+      update_available: false
     light.living_room_ridge:
       brightness: 255
       color_temp: 153
@@ -103,6 +117,7 @@
       min_mireds: 153
       state: 'on'
       supported_features: 43
+      update_available: true
     light.living_room_turtle_chair:
       brightness: 255
       color_temp: 153
@@ -111,24 +126,25 @@
       min_mireds: 153
       state: 'on'
       supported_features: 43
+      update_available: true
     light.living_room_tv:
       brightness: 255
       color:
-        x: 0.323
+        x: 0.324
         y: 0.329
       friendly_name: TV
       hs_color:
       - 0
-      - 0.392
+      - 0.784
       rgb_color:
       - 255
-      - 254
-      - 254
+      - 253
+      - 253
       state: 'on'
       supported_features: 57
-      update_available: true
+      update_available: false
       xy_color:
-      - 0.324
+      - 0.325
       - 0.329
 - id: '1579734722178'
   name: Room Rein Evening
