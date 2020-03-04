@@ -18,6 +18,8 @@ resources:
   url: /community_plugin/lovelace-fold-entity-row/fold-entity-row.js
 - type: module
   url: /community_plugin/button-card/button-card.js
+- tpye: module
+  url: /community_plugin/weather-card/weather-card.js
 state-icon-active-color: '#0F0'
 title: Home Assistant
 views:
@@ -46,19 +48,13 @@ views:
           step: 1
           toggle: true
           type: custom:slider-entity-row
-        - entity: light.living_room_tv
-          hide_state: true
-          min: 1
-          step: 1
-          toggle: true
-          type: custom:slider-entity-row
         - entity: light.corner
           hide_state: true
           min: 1
           step: 1
           toggle: true
           type: custom:slider-entity-row
-        - entity: light.kitchen_cabinets_map
+        - entity: light.living_room_tv
           hide_state: true
           min: 1
           step: 1
@@ -68,6 +64,26 @@ views:
         head:
           entity: light.living_room
           icon: mdi:sofa
+          min: 0
+          step: 1
+          type: custom:slider-entity-row
+        type: custom:fold-entity-row
+      - entities:
+        - entity: light.kitchen_cabinets_map
+          hide_state: true
+          min: 1
+          step: 1
+          toggle: true
+          type: custom:slider-entity-row
+        - entity: light.kitchen_extractor_hood
+          hide_state: true
+          min: 1
+          step: 1
+          toggle: true
+          type: custom:slider-entity-row
+        head:
+          entity: light.kitchen
+          icon: mdi:stove
           min: 0
           step: 1
           type: custom:slider-entity-row
@@ -166,6 +182,7 @@ views:
           step: 1
           type: custom:slider-entity-row
         type: custom:fold-entity-row
+      - entity: light.storage_room
       show_header_toggle: false
       title: Lights
       type: entities
@@ -537,17 +554,35 @@ views:
     - entity: binary_sensor.motion_hallway_back
     - entity: binary_sensor.motion_hallway
     - entity: timer.light_hallway
+    - entity: timer.light_storage_room
     show_header_toggle: false
     title: Motion
     type: entities
   - entities:
     - entity: binary_sensor.nobody_home
-    - entity: light.extractor_hood
+    - entity: light.kitchen_extractor_hood
     - entity: light.living_room_tv
     - entity: light.storage_room
+    - entity: input_boolean.test_boolean
+    - entity: binary_sensor.sleep_mode
     show_header_toggle: false
     title: Overig
     type: entities
+  - entities:
+    - entity: sensor.light_intensity_hallway
+      index: 0
+    font_size: 80
+    group: false
+    hour24: true
+    line_width: 2
+    points_per_hour: 1
+    show:
+      extrema: false
+      fill: fade
+      labels: true
+      name: true
+      state: true
+    type: custom:mini-graph-card
   icon: mdi:test-tube
   path: test
   title: Test
