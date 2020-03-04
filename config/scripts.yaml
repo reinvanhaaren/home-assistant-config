@@ -185,6 +185,19 @@ restart_light_storage_room_timer:
     entity_id: timer.light_storage_room
   - service: timer.start
     entity_id: timer.light_storage_room
+turn_on_light_hallway:
+  alias: Turn on light Hallway
+  sequence:
+  - service: script.turn_on
+    data_template:
+      entity_id: >
+        {% if states('binary_sensor.sleep_mode') == 'on' %}
+        script.light_hallway_night
+        {% elif states('sun.sun') == 'below_horizon' %}
+        script.light_hallway_low
+        {% else %}
+        script.light_hallway_high
+        {% endif %}
 turn_off_living_room:
   alias: Turn off Living Room
   sequence:
