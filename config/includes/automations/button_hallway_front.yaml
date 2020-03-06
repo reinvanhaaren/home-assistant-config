@@ -7,8 +7,16 @@
       to: 'on'
   action:
     - service: light.turn_on
-      data:
+      data_template:
         entity_id: light.hallway
+        brightness: >
+          {% if states('sun.sun') == 'below_horizon' %}
+          1
+          {% else %}
+          100
+          {% endif %}
+    - service: script.turn_on
+      entity_id: script.restart_light_hallway_timer
 - alias: 'Button: Hallway front: off'
   initial_state: 'on'
   trigger:
@@ -19,25 +27,3 @@
     - service: light.turn_off
       data:
         entity_id: light.hallway
-- alias: 'Button: Hallway front: brightness_down'
-  initial_state: 'on'
-  trigger:
-    - platform: state
-      entity_id: sensor.button_hallway_front
-      to: 'brightness_down'
-  action:
-    - service: light.turn_off
-      data:
-        entity_id: light.all
-    - service: switch.turn_off
-      data:
-        entity_id: switch.living_room_corner
-    - service: media_player.turn_off
-      data:
-        entity_id: media_player.chromecast
-    - service: media_player.turn_off
-      data:
-        entity_id: media_player.tv
-    - service: input_boolean.turn_off
-      data:
-        entity_id: input_boolean.guest_mode
