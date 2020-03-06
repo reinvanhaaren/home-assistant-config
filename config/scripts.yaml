@@ -90,7 +90,7 @@ light_hallway_high:
   - service: light.turn_on
     entity_id: light.hallway
     data:
-      brightness: 150
+      brightness: 100
 light_hallway_low:
   alias: Light Hallway low
   sequence:
