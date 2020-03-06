@@ -263,7 +263,22 @@ views:
       type: thermostat
     - cards:
       - entities:
-        - entity: sensor.temperature_living_room
+        - entity: sensor.environment_living_room_temperature
+          index: 0
+        font_size: 80
+        group: false
+        hour24: true
+        line_width: 2
+        points_per_hour: 1
+        show:
+          extrema: false
+          fill: fade
+          labels: true
+          name: true
+          state: true
+        type: custom:mini-graph-card
+      - entities:
+        - entity: sensor.environment_bathroom_temperature
           index: 0
         font_size: 80
         group: false
@@ -461,7 +476,7 @@ views:
     title: Ventilation
     type: glance
   - entities:
-    - entity: sensor.temperature_living_room
+    - entity: sensor.environment_living_room_temperature
     - entity: sensor.temperature_room_rein
     type: entities
   icon: mdi:coolant-temperature
@@ -555,6 +570,7 @@ views:
     - entity: binary_sensor.motion_hallway
     - entity: timer.light_hallway
     - entity: timer.light_storage_room
+    - entity: sensor.light_intensity_hallway
     show_header_toggle: false
     title: Motion
     type: entities
@@ -568,21 +584,47 @@ views:
     show_header_toggle: false
     title: Overig
     type: entities
+  - cards:
+    - entities:
+      - entity: sensor.light_intensity_hallway
+        index: 0
+      font_size: 80
+      group: false
+      hour24: true
+      line_width: 2
+      points_per_hour: 1
+      show:
+        extrema: false
+        fill: fade
+        labels: true
+        name: true
+        state: true
+      type: custom:mini-graph-card
+    - entities:
+      - entity: sensor.environment_bathroom_humidity
+        index: 0
+      font_size: 80
+      group: false
+      hour24: true
+      line_width: 2
+      points_per_hour: 5
+      show:
+        extrema: false
+        fill: fade
+        labels: true
+        name: true
+        state: true
+      type: custom:mini-graph-card
+    type: vertical-stack
   - entities:
-    - entity: sensor.light_intensity_hallway
-      index: 0
-    font_size: 80
-    group: false
-    hour24: true
-    line_width: 2
-    points_per_hour: 1
-    show:
-      extrema: false
-      fill: fade
-      labels: true
-      name: true
-      state: true
-    type: custom:mini-graph-card
+    - entity: binary_sensor.ventilation_shower
+    - entity: binary_sensor.ventilation_cooking
+    - entity: binary_sensor.ventilation_high
+    - entity: binary_sensor.ventilation_medium
+    - entity: binary_sensor.ventilation_off
+    show_header_toggle: false
+    title: Ventilation
+    type: entities
   icon: mdi:test-tube
   path: test
   title: Test
