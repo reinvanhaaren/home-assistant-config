@@ -1,28 +1,28 @@
 ---
-- alias: 'Ventilation: Speed off'
+- alias: 'Ventilation: High'
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id: binary_sensor.ventilation_usage_low
-    to: 'on'
-  action:
-    - service: script.toggle
-      entity_id: script.ventilation_off
-- alias: 'Ventilation: Speed medium'
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: binary_sensor.ventilation_usage_medium
-    to: 'on'
-  action:
-    - service: script.toggle
-      entity_id: script.ventilation_medium
-- alias: 'Ventilation: Speed high'
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: binary_sensor.ventilation_usage_high
+    entity_id: binary_sensor.ventilation_high
     to: 'on'
   action:
     - service: script.toggle
       entity_id: script.ventilation_high
+- alias: 'Ventilation: Medium'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.ventilation_medium
+    to: 'on'
+  action:
+    - service: script.toggle
+      entity_id: script.ventilation_medium
+- alias: 'Ventilation: Off'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.ventilation_off
+    to: 'on'
+  action:
+    - service: script.toggle
+      entity_id: script.ventilation_off
