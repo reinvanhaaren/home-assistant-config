@@ -1,0 +1,103 @@
+---
+- alias: 'Button: Room Bas door: left'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: sensor.button_room_bas_door
+      to: 'left'
+  action:
+    - service: light.turn_on
+      data_template:
+        entity_id: light.bas_ceiling
+        transition: 1
+        brightness: >
+          {% if states('light.bas_ceiling') == 'on' %}
+          0
+          {% else %}
+          1
+          {% endif %}
+- alias: 'Button: Room Bas door: left_long'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: sensor.button_room_bas_door
+      to: 'left_long'
+  action:
+    - service: light.turn_on
+      data_template:
+        entity_id: light.bas_ceiling
+        transition: 1
+        brightness: >
+          {% if state_attr('light.bas_ceiling', 'brightness') | int >= 150 %}
+          1
+          {% else %}
+          150
+          {% endif %}
+- alias: 'Button: Room Bas door: right'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: sensor.button_room_bas_door
+      to: 'right'
+  action:
+    - service: light.turn_on
+      data_template:
+        entity_id: light.room_bas_bed
+        transition: 1
+        brightness: >
+          {% if states('light.room_bas_bed') == 'on' %}
+          0
+          {% else %}
+          1
+          {% endif %}
+- alias: 'Button: Room Bas door: right_long'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: sensor.button_room_bas_door
+      to: 'right_long'
+  action:
+    - service: light.turn_on
+      data_template:
+        entity_id: light.room_bas_bed
+        transition: 1
+        brightness: >
+          {% if state_attr('light.room_bas_bed', 'brightness') | int >= 150 %}
+          1
+          {% else %}
+          150
+          {% endif %}
+- alias: 'Button: Room Bas door: both'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: sensor.button_room_bas_door
+      to: 'both'
+  action:
+    - service: light.turn_on
+      data_template:
+        entity_id: light.room_bas
+        transition: 1
+        brightness: >
+          {% if states('light.room_bas') == 'on' %}
+          0
+          {% else %}
+          1
+          {% endif %}
+- alias: 'Button: Room Bas door: both_long'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: sensor.button_room_bas_door
+      to: 'both_long'
+  action:
+    - service: light.turn_on
+      data_template:
+        entity_id: light.room_bas
+        transition: 1
+        brightness: >
+          {% if state_attr('light.room_bas', 'brightness') | int >= 150 %}
+          1
+          {% else %}
+          150
+          {% endif %}
