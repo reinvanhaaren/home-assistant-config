@@ -1,0 +1,74 @@
+---
+project_id: !secret google_assistant_project_id
+service_account: !include ../../.ga_service_account.json
+report_state: true
+exposed_domains:
+  - switch
+  - light
+entity_config:
+  switch.living_room_christmas_tree:
+    expose: false
+  switch.washing_machine:
+    expose: false
+  switch.start_washing_machine:
+    expose: false
+  switch.ventilation:
+    expose: false
+  switch.button_ventilation_off:
+    expose: false
+  switch.button_ventilation_medium:
+    expose: false
+  switch.ventilation_medium:
+    expose: false
+  switch.button_ventilation_high:
+    expose: false
+  switch.ventilation_high:
+    expose: false
+  switch.heating_away_mode:
+    expose: false
+  switch.heater:
+    expose: false
+  light.hallway:
+    expose: false
+  light.room_rein:
+    expose: false
+  light.room_bas:
+    expose: false
+  light.living_room_couch_1:
+    expose: false
+  light.living_room_couch_2:
+    expose: false
+  light.living_room_couch_3:
+    expose: false
+  light.living_room_corner:
+    expose: false
+  light.living_room:
+    expose: false
+  light.kitchen:
+    expose: false
+  light.kitchen_cabinets:
+    expose: false
+  light.all:
+    expose: false
+  light.room_bas_ceiling_1:
+    expose: false
+  light.room_bas_ceiling_2:
+    expose: false
+  light.room_rein_1:
+    expose: false
+  light.room_rein_2:
+    expose: false
+  light.hallway_front:
+    expose: false
+  light.hallway_back:
+    expose: false
+  light.hallway_1:
+    expose: false
+  light.hallway_2:
+    expose: false
+  light.hallway_3:
+    expose: false
+  light.hallway_4:
+    expose: false
+  light.living_room_and_kitchen_cabinets:
+    expose: false

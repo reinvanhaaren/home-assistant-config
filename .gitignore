@@ -9,6 +9,7 @@ webostv.conf
 .homekit.state
 .spotify-token-cache
 .cloud
+.ga_service_account.json
 
 
 # Created by https://www.gitignore.io/api/linux,macos,windows,homeassistant,visualstudiocode
