@@ -117,21 +117,30 @@
       delay_off: '00:10:00'
       value_template: >
         {{ states('sensor.environment_bathroom_humidity') | int >= 60 }}
+    ventilation_toilet_high:
+      friendly_name: Ventilation toilet high
+      delay_on: '00:05:00'
       delay_off: '00:10:00'
       value_template: >
-        {{ states('light.kitchen_extractor_hood') == 'on' }}
+        {{ states('light.toilet') == 'on' }}
+    ventilation_toilet_medium:
+      friendly_name: Ventilation toilet medium
+      delay_off: '00:10:00'
+      value_template: >
+        {{ states('light.toilet') == 'on' }}
     ventilation_high:
       friendly_name: Ventilation high
       value_template: >
         {{
-          states('binary_sensor.ventilation_shower') == 'on'
+          states('binary_sensor.ventilation_shower') == 'on' or
+          states('binary_sensor.ventilation_toilet_high') == 'on'
         }}
     ventilation_medium:
       friendly_name: Ventilation medium
       value_template: >
         {{
           states('binary_sensor.ventilation_high') != 'on' and
-          states('binary_sensor.ventilation_cooking') == 'on'
+          states('binary_sensor.ventilation_toilet_medium') == 'on'
         }}
     ventilation_off:
       friendly_name: Ventilation low
