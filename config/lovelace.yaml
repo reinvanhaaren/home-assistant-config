@@ -182,6 +182,7 @@ views:
           step: 1
           type: custom:slider-entity-row
         type: custom:fold-entity-row
+      - entity: light.toilet
       - entity: light.storage_room
       show_header_toggle: false
       title: Lights
@@ -222,6 +223,38 @@ views:
       type: weather-forecast
     type: vertical-stack
   - cards:
+    - entities:
+      - entity: sensor.netherlands_coronavirus_confirmed
+        icon: mdi:check
+        name: Confirmed
+      - entity: sensor.netherlands_coronavirus_current
+        icon: mdi:face-recognition
+        name: Current
+      - entity: sensor.netherlands_coronavirus_recovered
+        icon: mdi:pill
+        name: Recovered
+      - entity: sensor.netherlands_coronavirus_deaths
+        icon: mdi:emoticon-dead-outline
+        name: Dead
+      show_name: true
+      title: Corona Netherlands
+      type: glance
+    - entities:
+      - entity: sensor.worldwide_coronavirus_confirmed
+        icon: mdi:check
+        name: Confirmed
+      - entity: sensor.worldwide_coronavirus_current
+        icon: mdi:face-recognition
+        name: Current
+      - entity: sensor.worldwide_coronavirus_recovered
+        icon: mdi:pill
+        name: Recovered
+      - entity: sensor.worldwide_coronavirus_deaths
+        icon: mdi:emoticon-dead-outline
+        name: Dead
+      show_name: true
+      title: Corona Worldwide
+      type: glance
     - background: /local/images/card_background_tv.png
       entity: media_player.tv
       hide:
@@ -261,37 +294,72 @@ views:
   - cards:
     - entity: climate.heating
       type: thermostat
+    - entities:
+      - entity: switch.button_ventilation_off
+        hold_action:
+          action: more-info
+        name: 'Off'
+        show_icon: true
+        show_name: true
+        tap_action:
+          action: toggle
+        type: entity-button
+      - entity: switch.button_ventilation_medium
+        hold_action:
+          action: more-info
+        name: Medium
+        show_icon: true
+        show_name: true
+        tap_action:
+          action: toggle
+        type: entity-button
+      - entity: switch.button_ventilation_high
+        hold_action:
+          action: more-info
+        name: High
+        show_icon: true
+        show_name: true
+        tap_action:
+          action: toggle
+        type: entity-button
+      show_icon: true
+      show_name: true
+      show_state: false
+      title: Ventilation
+      type: glance
     - cards:
-      - entities:
-        - entity: sensor.environment_living_room_temperature
-          index: 0
-        font_size: 80
-        group: false
-        hour24: true
-        line_width: 2
-        points_per_hour: 1
-        show:
-          extrema: false
-          fill: fade
-          labels: true
-          name: true
-          state: true
-        type: custom:mini-graph-card
-      - entities:
-        - entity: sensor.environment_bathroom_temperature
-          index: 0
-        font_size: 80
-        group: false
-        hour24: true
-        line_width: 2
-        points_per_hour: 1
-        show:
-          extrema: false
-          fill: fade
-          labels: true
-          name: true
-          state: true
-        type: custom:mini-graph-card
+      - cards:
+        - entities:
+          - entity: sensor.environment_living_room_temperature
+            index: 0
+          font_size: 80
+          group: false
+          hour24: true
+          line_width: 2
+          points_per_hour: 1
+          show:
+            extrema: false
+            fill: fade
+            labels: true
+            name: true
+            state: true
+          type: custom:mini-graph-card
+        - entities:
+          - entity: sensor.environment_bathroom_temperature
+            index: 0
+          font_size: 80
+          group: false
+          hour24: true
+          line_width: 2
+          points_per_hour: 1
+          show:
+            extrema: false
+            fill: fade
+            labels: true
+            name: true
+            state: true
+          type: custom:mini-graph-card
+        type: horizontal-stack
       - entities:
         - entity: sensor.temperature_room_rein
           index: 0
@@ -581,6 +649,7 @@ views:
     - entity: light.storage_room
     - entity: input_boolean.test_boolean
     - entity: binary_sensor.sleep_mode
+    - entity: light.toilet
     show_header_toggle: false
     title: Overig
     type: entities
@@ -618,7 +687,8 @@ views:
     type: vertical-stack
   - entities:
     - entity: binary_sensor.ventilation_shower
-    - entity: binary_sensor.ventilation_cooking
+    - entity: binary_sensor.ventilation_toilet_high
+    - entity: binary_sensor.ventilation_toilet_medium
     - entity: binary_sensor.ventilation_high
     - entity: binary_sensor.ventilation_medium
     - entity: binary_sensor.ventilation_off
