@@ -53,6 +53,18 @@
   brightness: true
   rgb: false
 
+- platform: mqtt
+  name: Toilet
+  command_topic: "home/sonoff_mini_toilet/cmnd/POWER"
+  state_topic: "home/sonoff_mini_toilet/tele/STATE"
+  state_value_template: "{{value_json.POWER}}"
+  availability_topic: "home/sonoff_mini_toilet/tele/LWT"
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  qos: 1
+
 - platform: switch
   name: Christmas tree
   entity_id: switch.living_room_christmas_tree
