@@ -176,7 +176,7 @@
           brightness: '{{ brightness }}'
           min_brightness: 29
     kitchen_cabinets_map:
-      friendly_name: 'Kitchen'
+      friendly_name: 'Kitchen cabinets'
       level_template: >
         {% set n = states.light.kitchen_cabinets.attributes.brightness|int %}
         {% if n == 0 %}
