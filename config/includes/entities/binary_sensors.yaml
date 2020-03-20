@@ -116,9 +116,7 @@
       friendly_name: Ventilation shower
       delay_off: '00:10:00'
       value_template: >
-        {{ states('sensor.environment_bathroom_humidity') | int >= 50 }}
-    ventilation_cooking:
-      friendly_name: Ventilation cooking
+        {{ states('sensor.environment_bathroom_humidity') | int >= 60 }}
       delay_off: '00:10:00'
       value_template: >
         {{ states('light.kitchen_extractor_hood') == 'on' }}
