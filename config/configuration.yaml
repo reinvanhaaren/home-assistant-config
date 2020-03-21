@@ -29,7 +29,6 @@ zone:                 !include includes/entities/zones.yaml
 # alarm_control_panel:  !include includes/integrations/alarm_control_panel.yaml
 camera:               !include includes/integrations/camera.yaml
 google_assistant:     !include includes/integrations/google_assistant.yaml
-homekit:              !include includes/integrations/homekit.yaml
 ios:                  !include includes/integrations/ios.yaml
 # mikrotik:             !include includes/integrations/mikrotik.yaml
 mqtt:                 !include includes/integrations/mqtt.yaml
