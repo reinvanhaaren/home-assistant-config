@@ -5,6 +5,7 @@ report_state: true
 exposed_domains:
   - switch
   - light
+  - climate
 entity_config:
   switch.living_room_christmas_tree:
     expose: false
@@ -27,8 +28,6 @@ entity_config:
   switch.heating_away_mode:
     expose: false
   switch.heater:
-    expose: false
-  light.hallway:
     expose: false
   light.room_rein:
     expose: false
