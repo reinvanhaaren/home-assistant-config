@@ -12,6 +12,7 @@ services:
     environment:
       - TZ=Europe/Amsterdam
     networks:
+      - homeautomation
       - mariadb
       - proxy
 
@@ -25,16 +26,19 @@ services:
     volumes:
       - ./mosquitto:/mosquitto
       - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+    networks:
+      - homeautomation
 
   zigbee2mqtt:
     container_name: zigbee2mqtt
     image: koenkk/zigbee2mqtt
     restart: unless-stopped
-    network_mode: host
     volumes:
       - ./zigbee2mqtt:/app/data
     devices:
       - /dev/ttyACM0:/dev/ttyACM0
+    networks:
+      - homeautomation
 
   zigbee2mqttassistant:
     container_name: zigbee2mqttassistant
@@ -45,9 +49,13 @@ services:
     environment:
       - Z2MA_SETTINGS__MQTTSERVER=mosquitto
     networks:
+      - homeautomation
       - proxy
 
 networks:
+  homeautomation:
+    external:
+      name: homeautomation
   mariadb:
     external:
       name: mariadb
