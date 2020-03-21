@@ -5,11 +5,15 @@ services:
     container_name: homeassistant
     image: homeassistant/home-assistant
     restart: unless-stopped
-    network_mode: host
+    ports:
+      - 8123:8123
     volumes:
       - ./config:/config
     environment:
       - TZ=Europe/Amsterdam
+    networks:
+      - mariadb
+      - proxy
 
   mosquitto:
     container_name: mosquitto
@@ -40,3 +44,13 @@ services:
       - 8880:80
     environment:
       - Z2MA_SETTINGS__MQTTSERVER=mosquitto
+    networks:
+      - proxy
+
+networks:
+  mariadb:
+    external:
+      name: mariadb
+  proxy:
+    external:
+      name: proxy
