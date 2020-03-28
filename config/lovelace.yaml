@@ -621,6 +621,7 @@ views:
     - entity: binary_sensor.tv_source_youtube
     - entity: binary_sensor.tv_source_spotify
     - entity: binary_sensor.tv_source_netflix
+    - entity: binary_sensor.tv_source_plex
     - entity: binary_sensor.tv_source_tunein
     - entity: binary_sensor.tv_source_off
     show_header_toggle: false
@@ -650,6 +651,7 @@ views:
     - entity: input_boolean.test_boolean
     - entity: binary_sensor.sleep_mode
     - entity: light.toilet
+    - entity: input_boolean.ventilation_high_when_leaving_toilet
     show_header_toggle: false
     title: Overig
     type: entities
