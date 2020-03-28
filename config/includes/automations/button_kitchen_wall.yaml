@@ -10,6 +10,46 @@
       data_template:
         entity_id: light.kitchen_cabinets_map
         brightness: >
+          {% if
+            state_attr('light.kitchen_cabinets_map', 'brightness') | int > 1
+          %}
+          200
+          {% else %}
+          1
+          {% endif %}
+    - service: light.turn_on
+      data_template:
+        entity_id: light.kitchen_extractor_hood
+        transition: 1
+        brightness: >
+          {% if
+            state_attr('light.kitchen_cabinets_map', 'brightness') | int > 1
+          %}
+          200
+          {% else %}
+          1
+          {% endif %}
+- alias: 'Button: Kitchen wall: off'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: sensor.button_kitchen_wall
+      to: 'off'
+  action:
+    - service: light.turn_off
+      data_template:
+        entity_id: light.kitchen_extractor_hood
+- alias: 'Button: Kitchen wall: brightness_up'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: sensor.button_kitchen_wall
+      to: 'brightness_up'
+  action:
+    - service: light.turn_on
+      data_template:
+        entity_id: light.kitchen_cabinets_map
+        brightness: >
           {% if states('light.kitchen_cabinets_map') == 'on' %}
           200
           {% else %}
@@ -32,12 +72,12 @@
           {% else %}
           0
           {% endif %}
-- alias: 'Button: Kitchen wall: off'
+- alias: 'Button: Kitchen wall: brightness_down'
   initial_state: 'on'
   trigger:
     - platform: state
       entity_id: sensor.button_kitchen_wall
-      to: 'off'
+      to: 'brightness_down'
   action:
     - service: light.turn_on
       data_template:
@@ -65,43 +105,3 @@
           {% else %}
           0
           {% endif %}
-- alias: 'Button: Kitchen wall: brightness_up'
-  initial_state: 'on'
-  trigger:
-    - platform: state
-      entity_id: sensor.button_kitchen_wall
-      to: 'brightness_up'
-  action:
-    - service: light.turn_on
-      data_template:
-        entity_id: light.kitchen_cabinets_map
-        brightness: >
-          {% if
-            state_attr('light.kitchen_cabinets_map', 'brightness') | int > 1
-          %}
-          200
-          {% else %}
-          1
-          {% endif %}
-    - service: light.turn_on
-      data_template:
-        entity_id: light.kitchen_extractor_hood
-        transition: 1
-        brightness: >
-          {% if
-            state_attr('light.kitchen_cabinets_map', 'brightness') | int > 1
-          %}
-          200
-          {% else %}
-          1
-          {% endif %}
-- alias: 'Button: Kitchen wall: brightness_down'
-  initial_state: 'on'
-  trigger:
-    - platform: state
-      entity_id: sensor.button_kitchen_wall
-      to: 'brightness_down'
-  action:
-    - service: light.turn_off
-      data_template:
-        entity_id: light.kitchen_extractor_hood
