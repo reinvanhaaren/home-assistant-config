@@ -1,0 +1,19 @@
+---
+- alias: 'Ventilation toilet: Ventilation boolean on'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.light_toilet_5_minutes_on
+    to: 'on'
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.ventilation_high_when_leaving_toilet
+- alias: 'Ventilation toilet: Ventilation boolean off'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.light_toilet_5_minutes_on
+    to: 'off'
+  action:
+    - delay:
+        seconds: 1
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.ventilation_high_when_leaving_toilet

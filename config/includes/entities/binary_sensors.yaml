@@ -122,7 +122,10 @@
       delay_on: '00:05:00'
       delay_off: '00:10:00'
       value_template: >
-        {{ states('light.toilet') == 'on' }}
+        {{
+          states('input_boolean.ventilation_high_when_leaving_toilet') == 'on' and
+          states('light.toilet') == 'off'
+        }}
     ventilation_toilet_medium:
       friendly_name: Ventilation toilet medium
       delay_off: '00:10:00'
@@ -150,3 +153,8 @@
           states('binary_sensor.ventilation_high') != 'on' and
           states('binary_sensor.ventilation_medium') != 'on'
         }}
+    light_toilet_5_minutes_on:
+      friendly_name: Light toilet 5 minutes on
+      delay_on: '00:05:00'
+      value_template: >
+        {{ states('light.toilet') == 'on' }}
