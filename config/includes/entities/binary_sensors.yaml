@@ -46,6 +46,19 @@
             )
           )
         }}
+    tv_source_plex:
+      friendly_name: TV source Plex
+      value_template: >
+        {{
+          states('media_player.tv') == 'on' and
+          (
+            state_attr('media_player.tv', 'source') == 'Plex' or
+            (
+              state_attr('media_player.tv', 'source') == 'HDMI3' and
+              state_attr('media_player.chromecast', 'app_name') == 'Plex'
+            )
+          )
+        }}
     tv_source_tunein:
       friendly_name: TV source TuneIn
       value_template: >
@@ -63,6 +76,7 @@
           states('binary_sensor.tv_source_youtube') == 'off' and
           states('binary_sensor.tv_source_spotify') == 'off' and
           states('binary_sensor.tv_source_netflix') == 'off' and
+          states('binary_sensor.tv_source_plex') == 'off' and
           states('binary_sensor.tv_source_tunein') == 'off'
         }}
     ventilation_usage_low:
