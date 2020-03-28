@@ -3,11 +3,11 @@
   entities:
     light.kitchen_cabinets_map:
       brightness: 1
-      friendly_name: Kitchen
+      friendly_name: Kitchen cabinets
       state: 'on'
       supported_features: 1
     light.living_room_corner:
-      brightness: 27
+      brightness: 29
       color_temp: 494
       friendly_name: Corner
       max_mireds: 1000
@@ -33,7 +33,7 @@
       supported_features: 41
       update_available: false
     light.living_room_ridge:
-      brightness: 1
+      brightness: 9
       color_temp: 444
       friendly_name: Ridge
       max_mireds: 500
@@ -42,7 +42,7 @@
       supported_features: 43
       update_available: true
     light.living_room_turtle_chair:
-      brightness: 1
+      brightness: 12
       color_temp: 451
       friendly_name: Turtle chair
       max_mireds: 500
