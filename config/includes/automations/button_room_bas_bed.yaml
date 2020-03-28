@@ -1,81 +1,81 @@
 ---
-- alias: 'Button: Room Rein bed: on'
+- alias: 'Button: Room Bas bed: on'
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: sensor.button_room_rein_bed
+      entity_id: sensor.button_room_bas_bed
       to: 'on'
   action:
     - service: light.turn_on
       data_template:
         entity_id: >
-          {% if states('light.room_rein_bed') != 'on' %}
-          light.room_rein_bed
+          {% if states('light.room_bas_bed') != 'on' %}
+          light.room_bas_bed
           {% else %}
-          light.room_rein
+          light.room_bas
           {% endif %}
         brightness: >
-          {% if states('light.room_rein') == 'on' %}
-          {{ state_attr('light.room_rein', 'brightness') }}
+          {% if states('light.room_bas') == 'on' %}
+          {{ state_attr('light.room_bas', 'brightness') }}
           {% elif states('sun.sun') == 'above_horizon' %}
           150
           {% else %}
           1
           {% endif %}
-- alias: 'Button: Room Rein bed: off'
+- alias: 'Button: Room Bas bed: off'
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: sensor.button_room_rein_bed
+      entity_id: sensor.button_room_bas_bed
       to: 'off'
   action:
     - service: light.turn_off
       data:
-        entity_id: light.room_rein
-- alias: 'Button: Room Rein bed: brightness_up'
+        entity_id: light.room_bas
+- alias: 'Button: Room Bas bed: brightness_up'
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: sensor.button_room_rein_bed
+      entity_id: sensor.button_room_bas_bed
       to: 'brightness_up'
   action:
     - service: light.turn_on
       data_template:
         entity_id: >
-          {% if states('light.room_rein_ceiling') == 'on' %}
-          light.room_rein
+          {% if states('light.room_bas_ceiling') == 'on' %}
+          light.room_bas
           {% else %}
-          light.room_rein_bed
+          light.room_bas_bed
           {% endif %}
         brightness: >
           {% if
-              states('light.room_rein_bed') == 'on' and
-              state_attr('light.room_rein_bed', 'brightness') | float < 150
+              states('light.room_bas_bed') == 'on' and
+              state_attr('light.room_bas_bed', 'brightness') | float < 150
           %}
           150
           {% else %}
           255
           {% endif %}
         transition: 1
-- alias: 'Button: Room Rein bed: brightness_down'
+- alias: 'Button: Room Bas bed: brightness_down'
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: sensor.button_room_rein_bed
+      entity_id: sensor.button_room_bas_bed
       to: 'brightness_down'
   action:
     - service: light.turn_on
       data_template:
         entity_id: >
-          {% if states('light.room_rein_ceiling') == 'on' %}
-          light.room_rein
+          {% if states('light.room_bas_ceiling') == 'on' %}
+          light.room_bas
           {% else %}
-          light.room_rein_bed
+          light.room_bas_bed
           {% endif %}
         brightness: >
           {% if
-              states('light.room_rein_bed') == 'on' and
-              state_attr('light.room_rein_bed', 'brightness') | float > 150
+              states('light.room_bas_bed') == 'on' and
+              state_attr('light.room_bas_bed', 'brightness') | float > 150
           %}
           150
           {% else %}

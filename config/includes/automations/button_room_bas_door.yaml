@@ -8,10 +8,10 @@
   action:
     - service: light.turn_on
       data_template:
-        entity_id: light.bas_ceiling
+        entity_id: light.room_bas_ceiling
         transition: 1
         brightness: >
-          {% if states('light.bas_ceiling') == 'on' %}
+          {% if states('light.room_bas_ceiling') == 'on' %}
           0
           {% else %}
           1
@@ -25,10 +25,10 @@
   action:
     - service: light.turn_on
       data_template:
-        entity_id: light.bas_ceiling
+        entity_id: light.room_bas_ceiling
         transition: 1
         brightness: >
-          {% if state_attr('light.bas_ceiling', 'brightness') | int >= 150 %}
+          {% if state_attr('light.room_bas_ceiling', 'brightness') | int >= 150 %}
           1
           {% else %}
           150
