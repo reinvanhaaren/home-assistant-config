@@ -28,10 +28,12 @@
         entity_id: light.room_bas_ceiling
         transition: 1
         brightness: >
-          {% if state_attr('light.room_bas_ceiling', 'brightness') | int >= 150 %}
-          1
-          {% else %}
+          {% if state_attr('light.room_bas_ceiling', 'brightness') | int < 150 %}
           150
+          {% elif state_attr('light.room_bas_ceiling', 'brightness') | int < 255 %}
+          255
+          {% else %}
+          1
           {% endif %}
 - alias: 'Button: Room Bas door: right'
   initial_state: 'on'
@@ -62,10 +64,12 @@
         entity_id: light.room_bas_bed
         transition: 1
         brightness: >
-          {% if state_attr('light.room_bas_bed', 'brightness') | int >= 150 %}
-          1
-          {% else %}
+          {% if state_attr('light.room_bas_bed', 'brightness') | int < 150 %}
           150
+          {% elif state_attr('light.room_bas_bed', 'brightness') | int < 255 %}
+          255
+          {% else %}
+          1
           {% endif %}
 - alias: 'Button: Room Bas door: both'
   initial_state: 'on'
@@ -96,8 +100,10 @@
         entity_id: light.room_bas
         transition: 1
         brightness: >
-          {% if state_attr('light.room_bas', 'brightness') | int >= 150 %}
-          1
-          {% else %}
+          {% if state_attr('light.room_bas', 'brightness') | int < 150 %}
           150
+          {% elif state_attr('light.room_bas', 'brightness') | int < 255 %}
+          255
+          {% else %}
+          1
           {% endif %}
