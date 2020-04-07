@@ -40,7 +40,7 @@ services:
     image: carldebilly/zigbee2mqttassistant:linux-x64
     restart: unless-stopped
     ports:
-      - 8880:80
+      - 9002:80
     environment:
       - Z2MA_SETTINGS__MQTTSERVER=mosquitto
     networks:
