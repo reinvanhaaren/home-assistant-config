@@ -163,7 +163,6 @@ We have a small christmas tree in the living room, just for fun. Why enjoy the l
 ### Themes
 
 - [Google Dark Theme][hacs-google-dark-theme] - v1.2
-- [iOS Dark Mode Theme][hacs-ios-dark-mode-theme] - 749a300
 
 ## To-Do / Ideas
 
