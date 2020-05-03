@@ -211,5 +211,14 @@ turn_off_living_room:
     entity_id: light.kitchen
   - service: media_player.turn_off
     entity_id: media_player.tv
-  - service: media_player.turn_off
-    entity_id: media_player.google_home
+  # - service: media_player.turn_off
+  #   entity_id: media_player.google_home
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.googlehome2198
+      volume_level: 0.8
+  - service: media_player.play_media
+    data:
+      entity_id: media_player.googlehome2198
+      media_content_type: music
+      media_content_id: http://172.20.25.110:8123/community_plugin/logoff.mp3
