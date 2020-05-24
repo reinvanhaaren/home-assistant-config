@@ -13,6 +13,9 @@ dummy:
 ventilation_high_when_leaving_toilet:
   name: Ventilation high when leaving toilet
   initial: off
+ventilation_high_when_toilet_light_on:
+  name: Ventilation high when toilet light on
+  initial: off
 test_boolean:
   name: Test Boolean
   initial: off
