@@ -2,6 +2,8 @@ zigbee2mqtt/*
 mosquitto/*
 disabled/*
 
+config/images/*
+
 !zigbee2mqtt/configuration.example.yaml
 
 themes
