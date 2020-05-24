@@ -1,17 +1,13 @@
 ---
-- alias: 'Washing machine: Done notification'
+- alias: 'Washing machine: Done'
   initial_state: 'on'
   trigger:
     platform: state
     entity_id: binary_sensor.washing_machine
     to: 'off'
   action:
-    - service: notify.mobile_app_iphone_rein
-      data:
-        message: 'Washing machine is done 👚👕'
-    - service: notify.tv
-      data:
-        message: 'Washing machine is done'
+    - service: script.turn_on
+      entity_id: script.washing_machine_done_notification
 - alias: 'Washing machine: Start on time'
   initial_state: 'on'
   trigger:

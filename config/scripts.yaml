@@ -222,3 +222,15 @@ turn_off_living_room:
       entity_id: media_player.googlehome2198
       media_content_type: music
       media_content_id: http://172.20.25.110:8123/community_plugin/logoff.mp3
+washing_machine_done_notification:
+  alias: Washing machine done notification
+  sequence:
+  - service: notify.mobile_app_iphone_rein
+    data:
+      message: 'Washing machine is done 👚👕'
+  - service: notify.mobile_app_iphone_van_bas
+    data:
+      message: 'Washing machine is done 👚👕'
+  - service: notify.tv
+    data:
+      message: 'Washing machine is done'
