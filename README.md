@@ -210,8 +210,8 @@ I would love to share new ideas! Please contact me by e-mail or open a issue in 
 [forks-badge]: https://badgen.net/github/forks/reinvanhaaren/home-assistant-config
 [hass-version]: https://www.home-assistant.io/blog/2020/05/20/release-110/
 [hass-version-badge]: https://img.shields.io/badge/Home%20Assistant-0.110.2-brightgreen.svg
-[hacs-version]: https://github.com/hacs/integration/releases/tag/1.0.2
-[hacs-version-badge]: https://img.shields.io/badge/Home%20Assistant%20Community%20Store-1.0.2-brightgreen.svg
+[hacs-version]: https://github.com/hacs/integration/releases/tag/1.0.3
+[hacs-version-badge]: https://img.shields.io/badge/Home%20Assistant%20Community%20Store-1.0.3-brightgreen.svg
 [buymeacoffee]: https://www.buymeacoffee.com/reinvanhaaren
 [buymeacoffee-badge]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
 [flag-nl]: https://raw.githubusercontent.com/oxguy3/flags/master/mini/nl.png
