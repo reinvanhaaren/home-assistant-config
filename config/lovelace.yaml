@@ -652,6 +652,7 @@ views:
     - entity: binary_sensor.sleep_mode
     - entity: light.toilet
     - entity: input_boolean.ventilation_high_when_leaving_toilet
+    - entity: input_boolean.ventilation_high_when_toilet_light_on
     show_header_toggle: false
     title: Overig
     type: entities
