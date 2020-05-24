@@ -1,4 +1,6 @@
 ---
+internal_url: !secret internal_url
+external_url: !secret external_url
 latitude: !secret latitude_home
 longitude: !secret longitude_home
 elevation: 0

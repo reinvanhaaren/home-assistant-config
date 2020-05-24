@@ -546,6 +546,7 @@ views:
   - entities:
     - entity: sensor.environment_living_room_temperature
     - entity: sensor.temperature_room_rein
+    - entity: sun.sun
     type: entities
   icon: mdi:coolant-temperature
   path: temp

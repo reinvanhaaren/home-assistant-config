@@ -38,7 +38,7 @@ spotify:              !include includes/integrations/spotify.yaml
 # telegram_bot:         !include includes/integrations/telegram_bot.yaml
 tplink:               !include includes/integrations/tplink.yaml
 tts:                  !include includes/integrations/tts.yaml
-tuya:                 !include includes/integrations/tuya.yaml
+# tuya:                 !include includes/integrations/tuya.yaml
 wake_on_lan:          !include includes/integrations/wake_on_lan.yaml
 weather:              !include includes/integrations/weather.yaml
 webostv:              !include includes/integrations/webostv.yaml
