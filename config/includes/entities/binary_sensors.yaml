@@ -128,9 +128,10 @@
         }}
     ventilation_shower:
       friendly_name: Ventilation shower
-      delay_off: '00:05:00'
+      delay_on: '00:02:00'
+      delay_off: '00:20:00'
       value_template: >
-        {{ states('sensor.environment_bathroom_humidity') | int >= 58 }}
+        {{ states('sensor.environment_bathroom_humidity') | int >= 70 }}
     ventilation_toilet_high:
       friendly_name: Ventilation toilet high
       delay_off: '00:05:00'
