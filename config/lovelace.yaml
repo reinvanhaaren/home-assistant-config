@@ -251,38 +251,6 @@ views:
         method: state
         numeric: true
       type: custom:auto-entities
-    - entities:
-      - entity: sensor.netherlands_coronavirus_confirmed
-        icon: mdi:check
-        name: Confirmed
-      - entity: sensor.netherlands_coronavirus_current
-        icon: mdi:face-recognition
-        name: Current
-      - entity: sensor.netherlands_coronavirus_recovered
-        icon: mdi:pill
-        name: Recovered
-      - entity: sensor.netherlands_coronavirus_deaths
-        icon: mdi:emoticon-dead-outline
-        name: Dead
-      show_name: true
-      title: Corona Netherlands
-      type: glance
-    - entities:
-      - entity: sensor.worldwide_coronavirus_confirmed
-        icon: mdi:check
-        name: Confirmed
-      - entity: sensor.worldwide_coronavirus_current
-        icon: mdi:face-recognition
-        name: Current
-      - entity: sensor.worldwide_coronavirus_recovered
-        icon: mdi:pill
-        name: Recovered
-      - entity: sensor.worldwide_coronavirus_deaths
-        icon: mdi:emoticon-dead-outline
-        name: Dead
-      show_name: true
-      title: Corona Worldwide
-      type: glance
     - background: /local/images/card_background_tv.png
       entity: media_player.tv
       hide:
