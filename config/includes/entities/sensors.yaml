@@ -22,7 +22,7 @@
     light_intensity_hallway:
       friendly_name: Light intensity hallway
       value_template: >
-        {{ states.binary_sensor.motion_hallway_front.attributes.illuminance | int }}
+        {{ states.sensor.motion_hallway_front_illuminance | int }}
 
 - platform: mqtt
   name: Temperature Room Rein
