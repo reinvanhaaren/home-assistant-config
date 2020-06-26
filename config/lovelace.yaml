@@ -223,6 +223,34 @@ views:
       type: weather-forecast
     type: vertical-stack
   - cards:
+    - card:
+        show_header_toggle: false
+        title: Device Updates
+        type: entities
+      filter:
+        exclude:
+        - entity_id: binary_sensor.button*
+        include:
+        - entity_id: binary_sensor.*_update_available
+          state: 'on'
+      show_empty: false
+      sort:
+        method: state
+        numeric: true
+      type: custom:auto-entities
+    - card:
+        show_header_toggle: false
+        title: Replace device batteries
+        type: entities
+      filter:
+        include:
+        - entity_id: sensor.*_battery
+          state: < 10
+      show_empty: false
+      sort:
+        method: state
+        numeric: true
+      type: custom:auto-entities
     - entities:
       - entity: sensor.netherlands_coronavirus_confirmed
         icon: mdi:check
@@ -382,237 +410,51 @@ views:
   title: General
 - badges: []
   cards:
-  - entities:
-    - entity: input_boolean.guest_mode
-    - entity: input_datetime.guest_mode_active_until
-    show_header_toggle: false
-    title: General
-    type: entities
-  - entities:
-    - entity: light.living_room
-      full_row: true
-      hide_state: true
-      min: 1
-      step: 1
-      type: custom:slider-entity-row
-    - entity: light.couch
-      hide_state: true
-      min: 1
-      step: 1
-      toggle: true
-      type: custom:slider-entity-row
-    - entity: light.living_room_ridge
-      hide_state: true
-      min: 1
-      step: 1
-      toggle: true
-      type: custom:slider-entity-row
-    - entity: light.living_room_turtle_chair
-      hide_state: true
-      min: 1
-      step: 1
-      toggle: true
-      type: custom:slider-entity-row
-    - entity: light.tv
-      hide_state: true
-      min: 1
-      step: 1
-      toggle: true
-      type: custom:slider-entity-row
-    - entity: light.corner
-      hide_state: true
-      min: 1
-      step: 1
-      toggle: true
-      type: custom:slider-entity-row
-    - entity: light.kitchen_cabinets_map
-      hide_state: true
-      min: 1
-      step: 1
-      toggle: true
-      type: custom:slider-entity-row
-    - entity: light.christmas_tree
-    show_header_toggle: true
-    title: Living Room
-    type: entities
-  - entities:
-    - entity: light.room_rein
-      full_row: true
-      hide_state: true
-      min: 1
-      step: 1
-      type: custom:slider-entity-row
-    - entity: light.rein_ceiling
-      hide_state: true
-      min: 1
-      step: 1
-      toggle: true
-      type: custom:slider-entity-row
-    - entity: light.room_rein_bed
-      hide_state: true
-      min: 1
-      step: 1
-      toggle: true
-      type: custom:slider-entity-row
-    title: Room Rein
-    type: entities
-  - entities:
-    - entity: light.room_bas
-      full_row: true
-      hide_state: true
-      min: 1
-      step: 1
-      type: custom:slider-entity-row
-    - entity: light.bas_ceiling
-      hide_state: true
-      min: 1
-      step: 1
-      toggle: true
-      type: custom:slider-entity-row
-    - entity: light.room_bas_bed
-      hide_state: true
-      min: 1
-      step: 1
-      toggle: true
-      type: custom:slider-entity-row
-    title: Room Bas
-    type: entities
-  - entities:
-    - entity: binary_sensor.washing_machine
-    - entity: sensor.washing_machine_usage
-    show_header_toggle: false
-    title: Bathroom
-    type: entities
-  - entities:
-    - entity: light.hallway
-      hide_state: true
-      max: 100
-      min: 1
-      step: 1
-      toggle: true
-      type: custom:slider-entity-row
-    - entity: binary_sensor.door_living_room
-    - entity: binary_sensor.motion_hallway_front
-      icon: mdi:motion-sensor
-      name: Motion Hallway Front
-    - entity: binary_sensor.motion_hallway_back
-      icon: mdi:motion-sensor
-      name: Motion Hallway Back
-    show_header_toggle: false
-    title: Hallway
-    type: entities
-  icon: mdi:lightbulb
-  path: light
-  theme: ios-dark-mode
-  title: Light
-- badges: []
-  cards:
-  - entity: climate.heating
-    theme: ios-dark-mode
-    type: thermostat
-  - entities:
-    - entity: switch.button_ventilation_off
-      hold_action:
-        action: more-info
-      name: 'Off'
-      show_icon: true
-      show_name: true
-      tap_action:
-        action: toggle
-      type: entity-button
-    - entity: switch.button_ventilation_medium
-      hold_action:
-        action: more-info
-      name: Medium
-      show_icon: true
-      show_name: true
-      tap_action:
-        action: toggle
-      type: entity-button
-    - entity: switch.button_ventilation_high
-      hold_action:
-        action: more-info
-      name: High
-      show_icon: true
-      show_name: true
-      tap_action:
-        action: toggle
-      type: entity-button
-    show_icon: true
-    show_name: true
-    show_state: false
-    title: Ventilation
-    type: glance
-  - entities:
-    - entity: sensor.environment_living_room_temperature
-    - entity: sensor.temperature_room_rein
-    - entity: sun.sun
-    type: entities
-  icon: mdi:coolant-temperature
-  path: temp
-  title: Temp
-- badges: []
-  cards:
-  - entities:
-    - entity: binary_sensor.washing_machine
-    - entity: sensor.washing_machine_usage
-    show_header_toggle: false
-    title: Washing machine
-    type: entities
-  - entities:
-    - entity: input_boolean.enable_washing_machine_schedule
-      name: Autostart on
-    - entity: input_datetime.end_time_washing_machine
-      name: Set end time
-    - entity: sensor.start_time_washing_machine
-    - entity: sensor.end_time_washing_machine
-    show_header_toggle: false
-    title: Schedule
-    type: entities
-  icon: mdi:washing-machine
-  path: washing-machine
-  title: Washing machine
-- badges: []
-  cards:
-  - cards:
-    - entity: media_player.spotify_rein_van_haaren
-      type: custom:mini-media-player
-    - entity: media_player.google_home
-      type: custom:mini-media-player
-    title: Audio
-    type: vertical-stack
-  - cards:
-    - entity: media_player.chromecast
-      type: custom:mini-media-player
-    - entity: media_player.tv
-      type: custom:mini-media-player
-    - entity: media_player.plex_lg_43uj670v_zd
-      type: custom:mini-media-player
-    - entity: media_player.playstation_4
-      type: custom:mini-media-player
-    title: Video
-    type: vertical-stack
-  icon: mdi:monitor-speaker
-  path: media-players
-  title: Media Players
-- badges: []
-  cards:
-  - entities:
-    - entity: sensor.button_living_room_wall_battery
-    - entity: sensor.button_hallway_front_battery
-    - entity: sensor.button_room_rein_wall_battery
-    - entity: sensor.button_room_rein_bed_battery
-    - entity: sensor.button_room_bas_wall_battery
-    show_header_toggle: false
-    title: Buttons
-    type: entities
-  - entities:
-    - entity: sensor.door_living_room_battery
-    - entity: sensor.cube_living_room_battery
-    - entity: sensor.motion_hallway_back_battery
-    show_header_toggle: false
-    title: Other
-    type: entities
+  - card:
+      show_header_toggle: false
+      title: Buttons
+      type: entities
+    filter:
+      include:
+      - entity_id: sensor.button*_battery
+    sort:
+      method: state
+      numeric: true
+    type: custom:auto-entities
+  - card:
+      show_header_toggle: false
+      title: Motion sensors
+      type: entities
+    filter:
+      include:
+      - entity_id: sensor.motion*_battery
+    sort:
+      method: state
+      numeric: true
+    type: custom:auto-entities
+  - card:
+      show_header_toggle: false
+      title: Door- and window sensors
+      type: entities
+    filter:
+      include:
+      - entity_id: sensor.door*_battery
+    sort:
+      method: state
+      numeric: true
+    type: custom:auto-entities
+  - card:
+      show_header_toggle: false
+      title: Other
+      type: entities
+    filter:
+      include:
+      - entity_id: sensor.environment*_battery
+      - entity_id: sensor.cube*_battery
+    sort:
+      method: state
+      numeric: true
+    type: custom:auto-entities
   icon: mdi:battery-alert
   path: battery-status
   title: Battery status

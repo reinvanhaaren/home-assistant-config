@@ -159,6 +159,7 @@ We have a small christmas tree in the living room, just for fun. Why enjoy the l
 - [vertical-stack-in-card][hacs-vertical-stack-in-card] - v0.3.3
 - [fold-entity-row][hacs-fold-entity-row] - 16
 - [button-card][hacs-button-card] - 3.3.5
+- [auto-entities][hacs-auto-entities] - 16
 
 ### Themes
 
@@ -226,5 +227,6 @@ I would love to share new ideas! Please contact me by e-mail or open a issue in 
 [hacs-vertical-stack-in-card]: https://github.com/ofekashery/vertical-stack-in-card
 [hacs-fold-entity-row]: https://github.com/thomasloven/lovelace-fold-entity-row
 [hacs-button-card]: https://github.com/custom-cards/button-card
+[hacs-auto-entities]: https://github.com/thomasloven/lovelace-auto-entities
 [hacs-google-dark-theme]: https://github.com/JuanMTech/google_dark_theme
 [hacs-ios-dark-mode-theme]: https://github.com/basnijholt/lovelace-ios-dark-mode-theme
