@@ -152,14 +152,15 @@ We have a small christmas tree in the living room, just for fun. Why enjoy the l
 
 ### Plugins
 
-- [Custom Header][hacs-custom-header] - 1.4.6
-- [Mini Media Player][hacs-mini-media-player] - v1.8.1
-- [slider-entity-row][hacs-slider-entity-row] - 14
+- [Custom Header][hacs-custom-header] - 1.6.5
+- [Mini Media Player][hacs-mini-media-player] - v1.9.1
+- [slider-entity-row][hacs-slider-entity-row] - 15
 - [mini-graph-card][hacs-mini-graph-card] - v0.9.3
 - [vertical-stack-in-card][hacs-vertical-stack-in-card] - v0.3.3
 - [fold-entity-row][hacs-fold-entity-row] - 16
-- [button-card][hacs-button-card] - 3.3.5
+- [button-card][hacs-button-card] - 3.3.6
 - [auto-entities][hacs-auto-entities] - 16
+- [weather-card][hacs-weather-card] - v1.4.5
 
 ### Themes
 
@@ -211,6 +212,8 @@ I would love to share new ideas! Please contact me by e-mail or open a issue in 
 [forks-badge]: https://badgen.net/github/forks/reinvanhaaren/home-assistant-config
 [hass-version]: https://www.home-assistant.io/blog/2020/06/10/release-111/
 [hass-version-badge]: https://img.shields.io/badge/Home%20Assistant-0.111.4-brightgreen.svg
+[hacs-version]: https://github.com/hacs/integration/releases/tag/1.1.1
+[hacs-version-badge]: https://img.shields.io/badge/Home%20Assistant%20Community%20Store-1.1.1-brightgreen.svg
 [buymeacoffee]: https://www.buymeacoffee.com/reinvanhaaren
 [buymeacoffee-badge]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
 [flag-nl]: https://raw.githubusercontent.com/oxguy3/flags/master/mini/nl.png
@@ -226,5 +229,6 @@ I would love to share new ideas! Please contact me by e-mail or open a issue in 
 [hacs-fold-entity-row]: https://github.com/thomasloven/lovelace-fold-entity-row
 [hacs-button-card]: https://github.com/custom-cards/button-card
 [hacs-auto-entities]: https://github.com/thomasloven/lovelace-auto-entities
+[hacs-weather-card]: https://github.com/bramkragten/weather-card
 [hacs-google-dark-theme]: https://github.com/JuanMTech/google_dark_theme
 [hacs-ios-dark-mode-theme]: https://github.com/basnijholt/lovelace-ios-dark-mode-theme
