@@ -33,7 +33,7 @@ ios:                  !include includes/integrations/ios.yaml
 # mikrotik:             !include includes/integrations/mikrotik.yaml
 mqtt:                 !include includes/integrations/mqtt.yaml
 # notify:               !include includes/integrations/notify.yaml
-speedtestdotnet:      !include includes/integrations/speedtestdotnet.yaml
+# speedtestdotnet:      !include includes/integrations/speedtestdotnet.yaml
 spotify:              !include includes/integrations/spotify.yaml
 # telegram_bot:         !include includes/integrations/telegram_bot.yaml
 tplink:               !include includes/integrations/tplink.yaml
