@@ -185,6 +185,13 @@ restart_light_storage_room_timer:
     entity_id: timer.light_storage_room
   - service: timer.start
     entity_id: timer.light_storage_room
+restart_light_toilet_timer:
+  alias: Restart light Toilet timer
+  sequence:
+  - service: timer.cancel
+    entity_id: timer.light_toilet
+  - service: timer.start
+    entity_id: timer.light_toilet
 turn_on_light_hallway:
   alias: Turn on light Hallway
   sequence:

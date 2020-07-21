@@ -7,6 +7,10 @@ light_storage_room:
   name: Light storage room
   duration: '01:00:00'
   icon: mdi:lightbulb-off
+light_toilet:
+  name: Light toilet
+  duration: '00:10:00'
+  icon: mdi:lightbulb-off
 washing_machine_remaining:
   name: Washing machine remaining
   duration: '01:45:00'

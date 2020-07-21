@@ -1,0 +1,40 @@
+---
+- alias: 'Light Toilet: Reset and start timer'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_toilet
+      to: 'off'
+    - platform: state
+      entity_id: light.toilet
+      to: 'on'
+  action:
+    - service: script.turn_on
+      entity_id: script.restart_light_toilet_timer
+- alias: 'Light Toilet: Turn on'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_toilet
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: light.toilet
+      state: 'off'
+  action:
+    - service: light.turn_on
+      entity_id: light.toilet
+- alias: 'Light Toilet: Turn off'
+  initial_state: 'on'
+  trigger:
+    - platform: event
+      event_type: timer.finished
+      event_data:
+        entity_id: timer.light_toilet
+  condition:
+    - condition: state
+      entity_id: binary_sensor.motion_toilet
+      state:  'off'
+  action:
+    - service: light.turn_off
+      entity_id: light.toilet
