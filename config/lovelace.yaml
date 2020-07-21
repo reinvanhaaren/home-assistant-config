@@ -447,8 +447,10 @@ views:
   - entities:
     - entity: binary_sensor.motion_hallway_front
     - entity: binary_sensor.motion_hallway_back
+    - entity: binary_sensor.motion_toilet
     - entity: binary_sensor.motion_hallway
     - entity: timer.light_hallway
+    - entity: timer.light_toilet
     - entity: timer.light_storage_room
     - entity: sensor.light_intensity_hallway
     show_header_toggle: false
