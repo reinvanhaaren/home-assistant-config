@@ -221,7 +221,7 @@ turn_off_living_room:
     data:
       entity_id: media_player.googlehome2198
       media_content_type: music
-      media_content_id: http://172.20.25.110:8123/community_plugin/logoff.mp3
+      media_content_id: !secret sfx_url_logoff
 washing_machine_done_notification:
   alias: Washing machine done notification
   sequence:
