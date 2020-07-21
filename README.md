@@ -152,19 +152,19 @@ We have a small christmas tree in the living room, just for fun. Why enjoy the l
 
 ### Plugins
 
-- [Custom Header][hacs-custom-header] - 1.6.5
+- [Custom Header][hacs-custom-header] - 1.6.7
 - [Mini Media Player][hacs-mini-media-player] - v1.9.1
-- [slider-entity-row][hacs-slider-entity-row] - 15
-- [mini-graph-card][hacs-mini-graph-card] - v0.9.3
+- [slider-entity-row][hacs-slider-entity-row] - 16
+- [mini-graph-card][hacs-mini-graph-card] - v0.9.4
 - [vertical-stack-in-card][hacs-vertical-stack-in-card] - v0.3.3
-- [fold-entity-row][hacs-fold-entity-row] - 16
+- [fold-entity-row][hacs-fold-entity-row] - 19
 - [button-card][hacs-button-card] - 3.3.6
 - [auto-entities][hacs-auto-entities] - 16
-- [weather-card][hacs-weather-card] - v1.4.5
+- [weather-card][hacs-weather-card] - v1.4.6
 
 ### Themes
 
-- [Google Dark Theme][hacs-google-dark-theme] - v1.4
+- [Google Dark Theme][hacs-google-dark-theme] - v1.6
 
 ## To-Do / Ideas
 
@@ -212,8 +212,8 @@ I would love to share new ideas! Please contact me by e-mail or open a issue in 
 [forks-badge]: https://badgen.net/github/forks/reinvanhaaren/home-assistant-config
 [hass-version]: https://www.home-assistant.io/blog/2020/07/01/release-112/
 [hass-version-badge]: https://img.shields.io/badge/Home%20Assistant-0.112.4-brightgreen.svg
-[hacs-version]: https://github.com/hacs/integration/releases/tag/1.1.1
-[hacs-version-badge]: https://img.shields.io/badge/Home%20Assistant%20Community%20Store-1.1.1-brightgreen.svg
+[hacs-version]: https://github.com/hacs/integration/releases/tag/1.2.2
+[hacs-version-badge]: https://img.shields.io/badge/Home%20Assistant%20Community%20Store-1.2.2-brightgreen.svg
 [buymeacoffee]: https://www.buymeacoffee.com/reinvanhaaren
 [buymeacoffee-badge]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
 [flag-nl]: https://raw.githubusercontent.com/oxguy3/flags/master/mini/nl.png
