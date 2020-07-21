@@ -499,6 +499,23 @@ views:
         state: true
       type: custom:mini-graph-card
     type: vertical-stack
+  - cards:
+    - entities:
+      - entity: sensor.temperature_room_rein
+        index: 0
+      font_size: 80
+      group: false
+      hour24: true
+      line_width: 2
+      points_per_hour: 5
+      show:
+        extrema: false
+        fill: fade
+        labels: true
+        name: true
+        state: true
+      type: custom:mini-graph-card
+    type: vertical-stack
   - entities:
     - entity: binary_sensor.ventilation_shower
     - entity: binary_sensor.ventilation_toilet_high
@@ -509,6 +526,12 @@ views:
     show_header_toggle: false
     title: Ventilation
     type: entities
+  - entity: media_player.googlehome2198
+    type: media-control
+  - entity: media_player.google_home
+    type: media-control
+  - entity: media_player.nesthub2877
+    type: media-control
   icon: mdi:test-tube
   path: test
   title: Test
