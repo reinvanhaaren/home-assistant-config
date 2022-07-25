@@ -1,3 +1,7 @@
+## Archived repository
+
+This project is not actively maintained.
+
 # Rein van Haaren's Home Assistant configuration
 
 ![Project Maintenance][maintenance-badge]
